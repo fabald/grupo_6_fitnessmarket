@@ -7,6 +7,11 @@ Los mismos deberan recidir en Argentina.
 
 
 Integrantes:
+- Alderete, Fabián Alberto:
 
-- Nicolás Blasutig: 21 años, estudiante de Marketing y Programación, Analista de Google Ads. 
+- Blasutig, Nicolás: 21 años, estudiante de Marketing y Programación, Analista de Google Ads. 
 Pasión por aprender cosas nuevas, actividad fisica, viajar, conocer gente nueva  y juegos de pc.
+
+- Catrini, Brian Gabriel:
+
+- Kaufmann, Tomas:
