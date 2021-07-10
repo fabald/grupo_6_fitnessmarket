@@ -7,7 +7,7 @@ Los mismos deberan recidir en Argentina.
 
 
 Integrantes:
-- Alderete, Fabián Alberto:
+- Alderete, Fabián Alberto: Contador de profesión. Fanático del tenis, de la tecnología y del café con leche. Amante de la naturaleza
 
 - Blasutig, Nicolás: 21 años, estudiante de Marketing y Programación, Analista de Google Ads. 
 Pasión por aprender cosas nuevas, actividad fisica, viajar, conocer gente nueva  y juegos de pc.
