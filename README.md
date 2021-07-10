@@ -19,7 +19,14 @@ Pasión por aprender cosas nuevas, actividad fisica, viajar, conocer gente nueva
 
 
 
+BOCETO EN FIGMA:
+
+https://www.figma.com/file/zcvNphP25Ie33CIbNkZGHA/Fitness-Market-DH?node-id=0%3A1
+
+
+
 Paginas de referencia:
+
 -https://www.mercadolibre.com.ar/ (Elegida como excelencia y eficacia en E-commerce / )
 -https://www.gentech.com.ar/ (E-commerce deportivo)
 -https://www.gymtonic.com.ar/#!/-home/ (E-commerce deportivo)
