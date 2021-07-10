@@ -12,6 +12,16 @@ Integrantes:
 - Blasutig, Nicolás: 21 años, estudiante de Marketing y Programación, Analista de Google Ads. 
 Pasión por aprender cosas nuevas, actividad fisica, viajar, conocer gente nueva  y juegos de pc.
 
-- Catrini, Brian Gabriel:
+- Catrini, Brian Gabriel: 24 años. Estudiante de Programación. Comunicador. Devoción por el fútbol,
+ el tenis y todo tipo de series.
 
 - Kaufmann, Tomas:
+
+
+
+Paginas de referencia:
+-https://www.mercadolibre.com.ar/ (Elegida como excelencia y eficacia en E-commerce / )
+-https://www.gentech.com.ar/ (E-commerce deportivo)
+-https://www.gymtonic.com.ar/#!/-home/ (E-commerce deportivo)
+-https://www.balboafit.com/ (E-commerce deportivo)
+-https://www.instagram.com/ (Referencia en estetica)
