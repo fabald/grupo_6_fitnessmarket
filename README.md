@@ -15,7 +15,8 @@ Pasión por aprender cosas nuevas, actividad fisica, viajar, conocer gente nueva
 - Catrini, Brian Gabriel: 24 años. Estudiante de Programación. Comunicador. Devoción por el fútbol,
  el tenis y todo tipo de series.
 
-- Kaufmann, Tomas:
+- Kaufmann, Tomas: 22 años. Estudiante de Desarrollo de Software, aficionado de la música, los deportes y animales.
+- Kaufmann, Tomas: 
 
 
 
