@@ -35,6 +35,6 @@ Paginas de referencia:
 
 
 
-Tablero de trabajo
+Tablero de trabajo:
 
 https://trello.com/b/TTOFwJ6L/dh-fitness-market
