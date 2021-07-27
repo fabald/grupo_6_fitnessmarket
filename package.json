@@ -1,0 +1,22 @@
+{
+  "name": "grupo_6_fitnessmarket",
+  "version": "1.0.0",
+  "description": "El sitio web es un E-Commerce deportivo. En el mismo, se comercializaran productos orientados al fitness, tanto para su realizacion, como su suplementacion nutritiva. Encontraremos 3 lineas de productos principales: Vestimenta, Suplementacion y Equipo Accesorio.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabald/grupo_6_fitnessmarket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabald/grupo_6_fitnessmarket/issues"
+  },
+  "homepage": "https://github.com/fabald/grupo_6_fitnessmarket#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
