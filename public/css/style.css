@@ -493,11 +493,13 @@ main .carrito{
     border: none;
     outline: none;
     height: 40px;
+    width: 30vw;
     background: #0085FF;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
     margin-top: 5%;
+    margin-bottom: 5%;
     /*para version desktop aumentar margin top a 10 o 15% */
 
 }
