@@ -521,7 +521,11 @@ main .carrito{
     }
 
     .login-button{
-        margin-top: 15px;
+        margin-top: 65px;
+    }
+
+    .login-button{
+        width: 13vw;
     }
 }
 
