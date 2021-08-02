@@ -1,0 +1,157 @@
+/* Reglas de estilo Fabián*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.categories, .contact, .social-net {
+    list-style: none;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hamburguer-menu {
+    background-color: #fcbf49;
+    border-radius: 5px;
+}
+
+.hamburguer-menu:hover {
+    background-color: #003049;
+    
+
+}
+
+
+.side-bar-title {
+    padding: 5px 0px;
+}
+
+ .product-title {
+    padding: 15px 10px 10px;
+    text-align: center;
+}
+
+.article-purchase{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 10%;
+}
+
+h3 {
+    padding: 5px;
+}
+
+label, select {
+    width: 50%;
+    padding: 5px;
+}
+
+.pic {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+
+}
+
+
+
+main section p {
+    padding: 10px;
+}
+
+.side-bar {
+    background-color: #fcbf49;
+    border-radius: 5%;
+    padding: 5px;
+    display: none
+}
+
+footer {
+    display: flex;
+    color: white;
+    background-color: #003049;
+    flex-wrap: wrap;
+    padding: 10px 5px 5px ;
+    margin-top: 10px;
+}
+
+.ft-title {
+    font-size: 1.375rem;
+    padding-bottom: 0.625rem;
+}
+
+footer div {
+    padding: 1.25rem;
+    min-width: 12.5rem;
+    width: 100%;
+}
+
+.ft-social {
+    display: flex;
+    align-items: center;
+}
+
+.ft-social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    border-top: solid 1px white;
+    padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+@media (min-width:576px) {
+    footer {
+        justify-content: space-around;
+    }
+
+    footer div {
+        width: 50%;
+    }
+
+    .ft-social-list {
+    border-top: none;
+    }
+
+    .article {
+        width: 60%;
+    }
+
+    .pic {
+        width: 40%;
+        background-color: aquamarine;
+    }
+
+}
+
+@media (min-width:992px) {
+    footer {
+        justify-content: space-evenly;
+        max-width: 1200px;
+    }
+
+    footer div {
+        width: 25%;
+    }
+
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
