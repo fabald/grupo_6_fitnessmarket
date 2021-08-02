@@ -531,3 +531,26 @@ main .carrito{
 
 /*Login*/
 
+/*register*/
+
+.register-header{
+    background-color: #003049;
+    height: 15vh;
+    width: 100%;
+}
+.register-flexlogo{
+    display: flex;
+    justify-content: baseline;
+}
+
+.register-logo{
+    height: 130%;
+    width: 15%;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+/*register*/
