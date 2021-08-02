@@ -6,7 +6,7 @@
     padding: 0px;
 }
 
-a {
+ .category-item, .ft-contact {
     text-decoration: none;
     color: white;
 }
@@ -15,15 +15,16 @@ a {
     list-style: none;
 }
 
-main {
+.main {
     display: flex;
     flex-wrap: wrap;
 }
 
-.hamburguer-menu {
+.hamburguer-menu p{
     background-color: #fcbf49;
     border-radius: 5px;
 }
+
 
 .hamburguer-menu:hover {
     background-color: #003049;
@@ -47,11 +48,11 @@ main {
     padding: 5px 10%;
 }
 
-h3 {
+.price-label {
     padding: 5px;
 }
 
-label, select {
+.article-form{
     width: 50%;
     padding: 5px;
 }
@@ -63,9 +64,11 @@ label, select {
 
 }
 
+.article p {
+    padding: 10px;
+}
 
-
-main section p {
+.hamburguer-menu p {
     padding: 10px;
 }
 
@@ -76,7 +79,7 @@ main section p {
     display: none
 }
 
-footer {
+.footer {
     display: flex;
     color: white;
     background-color: #003049;
@@ -90,7 +93,7 @@ footer {
     padding-bottom: 0.625rem;
 }
 
-footer div {
+.footer div {
     padding: 1.25rem;
     min-width: 12.5rem;
     width: 100%;
@@ -115,12 +118,16 @@ footer div {
     text-align: center;
 }
 
+.fa-facebook, .fa-twitter, .fa-instagram {
+    color: white;
+}
+
 @media (min-width:576px) {
-    footer {
+    .footer {
         justify-content: space-around;
     }
 
-    footer div {
+    .footer div {
         width: 50%;
     }
 
@@ -136,22 +143,25 @@ footer div {
         width: 40%;
         background-color: aquamarine;
     }
-
 }
 
 @media (min-width:992px) {
-    footer {
+    .footer {
         justify-content: space-evenly;
         max-width: 1200px;
     }
 
-    footer div {
+    .footer div {
         width: 25%;
     }
 
     .side-bar {
         display: flex;
         flex-direction: column;
+    }
+
+    .hamburguer-menu {
+        display: none;
     }
 
 }
