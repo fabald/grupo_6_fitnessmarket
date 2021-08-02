@@ -32,3 +32,9 @@ Paginas de referencia:
 -https://www.gymtonic.com.ar/#!/-home/ (E-commerce deportivo)
 -https://www.balboafit.com/ (E-commerce deportivo)
 -https://www.instagram.com/ (Referencia en estetica)
+
+
+
+Tablero de trabajo:
+
+https://trello.com/b/TTOFwJ6L/dh-fitness-market
