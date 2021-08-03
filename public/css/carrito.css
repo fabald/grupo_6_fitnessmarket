@@ -17,6 +17,7 @@ main .carrito{
     text-align: center;
     opacity: 0.7;
     margin-left: 10px;
+    margin-top: 20px;
     border: solid 1px rgb(100, 100, 100);
     box-shadow: 5px;
     width: 20%;
@@ -38,7 +39,7 @@ main .carrito{
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 95%;
+    width: 98%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
@@ -120,7 +121,7 @@ main .carrito{
     text-align: center;
     opacity: 0.7;
     border: solid 1px rgb(100, 100, 100);
-    margin: -10px 10px 40px 0px;
+    margin: -10px 15px 40px 0px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     width: 20%;
 }
@@ -129,6 +130,7 @@ main .carrito{
     align-self: center;
     color: white;
     width: 25%;
+    margin-bottom: 40px;
     position: relative;
 }
 
@@ -172,11 +174,15 @@ main .carrito{
 
 @media (min-width:992px) {
     .contenedor-carrito{
-        max-width: 1180px;
+        max-width: 1300px;
     }
 
     .producto-carrito div{
         width: 25%;
+    }
+
+    .total-carrito{
+
     }
 }
 
