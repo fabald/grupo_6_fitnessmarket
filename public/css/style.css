@@ -140,11 +140,10 @@ footer div {
     .contenedor-carrito{
         max-width: 980px;
     }
-
+    
     .producto-carrito div{
         width: 50%;
     }
-
 }
 
 @media (min-width:992px) {
@@ -169,8 +168,9 @@ footer div {
     .producto-carrito div{
         width: 25%;
     }
-
 }
+
+
 /* Carrito */
 
 main .carrito{
