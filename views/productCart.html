@@ -2,18 +2,58 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d69b56a62e.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-
-        <link href="/css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+        <link href="/css/normalize.css" rel="stylesheet">
+        <link href="/css/header-footer.css" rel="stylesheet">
+        <link href="/css/carrito.css" rel="stylesheet">
+
+        <title>Carrito de compras</title>
     </head>
     <body>
         <header>
-
+            <div class="logo">
+                <a href="home">
+                    <img src="/images/logo.png">
+            </div>
+            <div class="nav">
+                <ul class="secciones">
+                    <li><a href="home">
+                            Home
+                        </a></li>
+                    <li><a href="#">
+                            Productos
+                        </a></li>
+                    <li><a href="#">
+                            Contacto
+                        </a></li>
+                </ul>
+                <input type="text" name="buscador" id="buscador" placeholder="Buscar equipos, suplementos...">
+            </div>
+            <div class="login-cart">
+                <ul class="login">
+                    <li><a href="login">
+                            Iniciar Sesión
+                        </a></li>
+                    <li><a href="register">
+                            Registrate
+                        </a></li>
+                </ul>
+    
+                <div class="carrito-container">
+                    <a href="productCart">
+                        <img src="/images/shopping-cart.svg">
+                    </a>
+                </div>
+            </div>
         </header>
+        
         <main class="carrito">
             <section>
                 <div class="contenedor-carrito">
@@ -22,12 +62,12 @@
                 </div>
                 <article class="producto-carrito">
                     <div class="foto-carrito">
-                    <img height= 200 width= 200 src="">
+                    <img src="/images/mancuernas.png">
                     </div>
                     <div class="descripcion-carrito">
-                        <h4 class="nombre-carrito">Nombre de produtcto</h4>
+                        <h4 class="nombre-carrito">Nombre de producto</h4>
                         <p class="envio-carrito">Tipo de envio</p>
-                        <button type="reset" class="eliminando-carrito">Eliminar</button>
+                        <button type="reset">Eliminar</button>
                     </div>
                     <div class="unidades-carrito">
                         <select name="unidades">
@@ -43,12 +83,12 @@
                 </article>
                 <article class="producto-carrito">
                     <div class="foto-carrito">
-                    <img height= 200 width= 200 src="">
+                    <img src="/images/mancuernas.png">
                     </div>
                     <div class="descripcion-carrito">
                         <h4 class="nombre-carrito">Nombre de produtcto</h4>
                         <p class="envio-carrito">Tipo de envio</p>
-                        <button type="reset" class="eliminando-carrito">Eliminar</button>
+                        <button type="reset">Eliminar</button>
                     </div>
                     <div class="unidades-carrito">
                         <select name="unidades">
@@ -64,12 +104,12 @@
                 </article>
                 <article class="producto-carrito">
                     <div class="foto-carrito">
-                    <img height= 200 width= 200 src="">
+                    <img src="/images/mancuernas.png">
                     </div>
                     <div class="descripcion-carrito">
                         <h4 class="nombre-carrito">Nombre de produtcto</h4>
                         <p class="envio-carrito">Tipo de envio</p>
-                        <button type="reset" class="eliminando-carrito">Eliminar</button>
+                        <button type="reset">Eliminar</button>
                     </div>
                     <div class="unidades-carrito">
                         <select name="unidades">
@@ -85,12 +125,12 @@
                 </article>
                 <article class="producto-carrito">
                     <div class="foto-carrito">
-                    <img height= 200 width= 200 src="">
+                    <img src="/images/mancuernas.png">
                     </div>
                     <div class="descripcion-carrito">
                         <h4 class="nombre-carrito">Nombre de produtcto</h4>
                         <p class="envio-carrito">Tipo de envio</p>
-                        <button type="reset" class="eliminando-carrito">Eliminar</button>
+                        <button type="reset">Eliminar</button>
                     </div>
                     <div class="unidades-carrito">
                         <select name="unidades">
@@ -113,8 +153,37 @@
                 </div>
             </section>
         </main>
-        <footer>
-            
+        <footer class="footer">
+            <div class="ft-categories">
+                <h2 class="ft-title">Categorías</h2>
+                <ul class="categories">
+                    <li><a href="#" class="category-item">Ropa</a></li>
+                    <li><a href="#" class="category-item">Suplementos</a></li>
+                    <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
+                </ul>
+            </div>
+            <div class="ft-help">
+                <h2 class="ft-title">Ayuda</h2>
+            </div>
+            <div class="ft-contact">
+                <h2 class="ft-title">Contacto</h2>
+                <ul class="contact">
+                    <li><a href="#" class="ft-contact">Dirección</a></li>
+                    <li><a href="#" class="ft-contact">Teléfono</a></li>
+                    <li><a href="#" class="ft-contact">Whatsapp</a></li>
+                </ul>
+            </div>
+            <div class="ft-social">
+                <ul class="ft-social-list">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+    
+    
+    
+    
         </footer>
     </body>
 </html>
