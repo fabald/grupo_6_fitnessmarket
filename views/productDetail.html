@@ -6,28 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d69b56a62e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/css/detail.css">
     <title>Detalle de producto</title>
 </head>
 <body>
     <header>
+        <div class="logo">
+            <a href="home">
+                <img src="/images/logo.png">
+        </div>
+        <div class="nav">
+            <ul class="secciones">
+                <li><a href="home">
+                        Home
+                    </a></li>
+                <li><a href="#">
+                        Productos
+                    </a></li>
+                <li><a href="#">
+                        Contacto
+                    </a></li>
+            </ul>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar equipos, suplementos...">
+        </div>
+        <div class="login-cart">
+            <ul class="login">
+                <li><a href="login">
+                        Iniciar Sesión
+                    </a></li>
+                <li><a href="register">
+                        Registrate
+                    </a></li>
+            </ul>
 
-
-
-
-
-
+            <div class="carrito-container">
+                <a href="productCart">
+                    <img src="/images/shopping-cart.svg">
+                </a>
+            </div>
+        </div>
     </header>
-    <main>
+    <main class="main">
         <section class="hamburguer-menu">
             <p><a href="#"><i class="fas fa-bars"></i></a></p>
         </section>
         <section class="side-bar">
             <h2 class="side-bar-title">Categorías</h2>
             <ul class="categories">
-                <li><a href="#">Ropa</a></li>
-                <li><a href="#">Suplementos</a></li>
-                <li><a href="#">Equipos de entrenamientos</a></li>
+                <li><a href="#" class="category-item">Ropa</a></li>
+                <li><a href="#" class="category-item">Suplementos</a></li>
+                <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
             </ul>
 
         </section>
@@ -35,10 +64,10 @@
             <h2 class="product-title">Nombre del producto</h2>
             <p>Descripción del producto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam deserunt quis nesciunt alias in perspiciatis labore rem incidunt quibusdam quae, similique iusto voluptate sint adipisci distinctio provident maiores sunt temporibus!</p>
             <div class="article-purchase">
-                <h3>Precio:</h3>
+                <h3 class="price-label">Precio:</h3>
                 <form action="#" method="GET">
-                    <label for="quantity">Cantidad:</label>
-                    <select name="quantity" id="quantity">
+                    <label for="quantity" class="article-form">Cantidad:</label>
+                    <select name="quantity" id="quantity" class="article-form">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -71,14 +100,13 @@
 
 
     </main>
-
-    <footer>
+    <footer class="footer">
         <div class="ft-categories">
             <h2 class="ft-title">Categorías</h2>
             <ul class="categories">
-                <li><a href="#">Ropa</a></li>
-                <li><a href="#">Suplementos</a></li>
-                <li><a href="#">Equipos de entrenamientos</a></li>
+                <li><a href="#" class="category-item">Ropa</a></li>
+                <li><a href="#" class="category-item">Suplementos</a></li>
+                <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
             </ul>
         </div>
         <div class="ft-help">
@@ -87,9 +115,9 @@
         <div class="ft-contact">
             <h2 class="ft-title">Contacto</h2>
             <ul class="contact">
-                <li><a href="#">Dirección</a></li>
-                <li><a href="#">Teléfono</a></li>
-                <li><a href="#">Whatsapp</a></li>
+                <li><a href="#" class="ft-contact">Dirección</a></li>
+                <li><a href="#" class="ft-contact">Teléfono</a></li>
+                <li><a href="#" class="ft-contact">Whatsapp</a></li>
             </ul>
         </div>
         <div class="ft-social">
@@ -99,11 +127,6 @@
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
-
-
-
-
     </footer>
-
 </body>
 </html>
