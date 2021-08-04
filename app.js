@@ -6,7 +6,7 @@ const path = require("path")
 
 
 app.get("/", (req,res)=>{
-    res.send("Pagina funcionando perri")
+    res.send("Pagina funcionando.")
 })
 
 

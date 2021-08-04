@@ -97,6 +97,7 @@
     
     
     
+    
  
 }
 
@@ -114,6 +115,7 @@
     text-align: left;
     margin-left: 11%;
     font-family: sans-serif;
+    color:#003049
 
 }
 
@@ -139,7 +141,13 @@
 .login-registrate{
     font-family: sans-serif;
     font-size: 12px;
+    color:#003049
 
+}
+
+p{
+    color:#003049;
+    font-family: sans-serif;
 }
 
 @media (min-width: 768px ){
