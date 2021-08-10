@@ -6,7 +6,7 @@ const path = require("path")
 
 
 app.get("/", (req,res)=>{
-    res.send("Pagina funcionando perri")
+    res.send("Pagina funcionando.")
 })
 
 
@@ -39,6 +39,6 @@ app.get("*", (req,res)=>{
 
 
 app.listen(port, ()=>{
-    console.log("Servidor corriendo en el puerto: "+port)
+    console.log("Servidor corriendo en el puerto: http://localhost:"+port+"/home")
 
 })
