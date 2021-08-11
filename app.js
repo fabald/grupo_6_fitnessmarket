@@ -2,17 +2,15 @@ const express = require("express")
 const app = express()
 const port = 3050
 const path = require("path") 
-
-
+const rutaProductos = require("./routes/products")
+app.set("view engine", "ejs")
 
 app.get("/", (req,res)=>{
     res.send("Pagina funcionando.")
 })
 
 
-app.get("/home", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/index.html"))
-})
+app.use("/home", rutaProductos)
 
 app.get("/listadoProd", (req,res)=>{
     res.sendFile(path.join(__dirname, "views/listadoProd.html"))
