@@ -14,6 +14,10 @@ app.get("/home", (req,res)=>{
     res.sendFile(path.join(__dirname, "views/index.html"))
 })
 
+app.get("/listadoProd", (req,res)=>{
+    res.sendFile(path.join(__dirname, "views/listadoProd.html"))
+})
+
 app.get("/login", (req,res)=>{
     res.sendFile(path.join(__dirname, "views/login.html"))
 })
