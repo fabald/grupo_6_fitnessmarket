@@ -17,7 +17,7 @@ header {
   justify-content: space-between;
   padding: 2%;
   background-color: #003049;
-  font-family: Helvetica, Arial, sans-serif;
+  footer
 }
 
 .logo img {
@@ -182,7 +182,7 @@ header li a {
 
   #buscador::placeholder {
     font-size: 2vw;
-    font-family: Helvetica, Arial, sans-serif;
+    footer
   }
 
   /*-------Login y Carrito ------*/
@@ -236,6 +236,7 @@ header li a {
 .category-item, .ft-contact {
     text-decoration: none;
     color: white;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .categories, .contact, .social-net {
@@ -351,7 +352,7 @@ header li a {
 
 @media (min-width:576px) {
     .footer {
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .footer div {
@@ -374,8 +375,7 @@ header li a {
 
 @media (min-width:992px) {
     .footer {
-        justify-content: space-evenly;
-        max-width: 1200px;
+        justify-content: space-between;
     }
 
     .footer div {
