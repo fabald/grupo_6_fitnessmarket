@@ -3,6 +3,7 @@ const app = express()
 const port = 3050
 const path = require("path") 
 const rutaProductos = require("./routes/products")
+const rutaUsuarios = require("./routes/users")
 app.set("view engine", "ejs")
 
 app.get("/", (req,res)=>{
@@ -10,27 +11,9 @@ app.get("/", (req,res)=>{
 })
 
 
-app.use("/home", rutaProductos)
+app.use("/", rutaProductos)
 
-app.get("/listadoProd", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/listadoProd.html"))
-})
-
-app.get("/login", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/login.html"))
-})
-
-app.get("/productCart", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/productCart.html"))
-})
-
-app.get("/productDetail", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/productDetail.html"))
-})
-
-app.get("/register", (req,res)=>{
-    res.sendFile(path.join(__dirname, "views/register.html"))
-})
+app.use("/", rutaUsuarios)
 
 app.use(express.static("public")) 
  
