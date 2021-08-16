@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     position: absolute;
+    margin: 40px 0px 40px 40px;
 }
 
 .hamburguer-menu p {
@@ -112,6 +113,48 @@
 .agregar-listado button:hover{
     color: #003049;
 }
+
+.paginacion{
+    margin: 40px 0px 80px 0px;
+}
+
+.paginacion ul{
+    list-style: none;
+    text-align: center;
+}
+
+.paginacion ul li{
+    display: inline-block;
+    color:rgb(100, 100, 100);
+    background-color: #ebebeb;
+    padding: 15px 25px;
+    border: solid black 1px;
+}
+
+.paginacion ul li a{
+    display: block;
+    text-decoration: none;
+}
+
+.paginacion ul li a:link{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:active{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:visited{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:hover{
+    color: white;
+}
+
 
 
 @media (min-width:992px) {
