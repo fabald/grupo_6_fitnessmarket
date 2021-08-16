@@ -4,12 +4,8 @@ const port = 3050
 const path = require("path") 
 const rutaProductos = require("./routes/products")
 const rutaUsuarios = require("./routes/users")
+
 app.set("view engine", "ejs")
-
-app.get("/", (req,res)=>{
-    res.send("Pagina funcionando.")
-})
-
 
 app.use("/", rutaProductos)
 

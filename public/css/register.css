@@ -1,5 +1,9 @@
 /*register*/
 
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .register-header{
     background-color: #003049;
     height: 15vh;

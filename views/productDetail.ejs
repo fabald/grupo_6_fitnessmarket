@@ -11,42 +11,8 @@
     <title>Detalle de producto</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="home">
-                <img src="/images/logo.png">
-        </div>
-        <div class="nav">
-            <ul class="secciones">
-                <li><a href="home">
-                        Home
-                    </a></li>
-                <li><a href="listadoProd">
-                        Productos
-                    </a></li>
-                <li><a href="#">
-                        Contacto
-                    </a></li>
-            </ul>
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar equipos, suplementos...">
-        </div>
-        <div class="login-cart">
-            <ul class="login">
-                <li><a href="login">
-                        Iniciar Sesión
-                    </a></li>
-                <li><a href="register">
-                        Registrate
-                    </a></li>
-            </ul>
+    <%- include('./partials/header') %>
 
-            <div class="carrito-container">
-                <a href="productCart">
-                    <img src="/images/shopping-cart.svg">
-                </a>
-            </div>
-        </div>
-    </header>
     <main class="main">
         <section class="hamburguer-menu">
             <p><a href="#"><i class="fas fa-bars"></i></a></p>
@@ -100,38 +66,7 @@
 
 
     </main>
-    <footer class="footer">
-        <div class="ft-categories">
-            <h2 class="ft-title">Categorías</h2>
-            <ul class="categories">
-                <li><a href="#" class="category-item">Ropa</a></li>
-                <li><a href="#" class="category-item">Suplementos</a></li>
-                <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
-            </ul>
-        </div>
-        <div class="ft-help">
-            <h2 class="ft-title">Ayuda</h2>
-        </div>
-        <div class="ft-contact">
-            <h2 class="ft-title">Contacto</h2>
-            <ul class="contact">
-                <li><a href="#" class="ft-contact">Dirección</a></li>
-                <li><a href="#" class="ft-contact">Teléfono</a></li>
-                <li><a href="#" class="ft-contact">Whatsapp</a></li>
-            </ul>
-        </div>
-        <div class="ft-social">
-            <ul class="ft-social-list">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-
-
-
-
-    </footer>
+    <%- include('./partials/footer') %>
 
 
 </body>
