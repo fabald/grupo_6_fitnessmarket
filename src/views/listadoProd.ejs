@@ -34,20 +34,25 @@
                         <li><a href="#" class="category-item">Suplementos</a></li>
                         <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
                     </ul>
+                   
 
                 </section>
-
+               
                 <section class="products-listado">
 
+                    <% productList.forEach( product => { %>
+
                     <article class="articulos-listado">
                         <div class="imagen-listado">
-                            <a href="productDetail">
+                            <a href="productDetail/<%= product.id %>">
                                 <img src="/images/mancuernas.png">
                             </a>
                         </div>
                         <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
+                            <h4 class="nombre-listado"><%= product.nombre %></h4>
+                            <br>
+                            <p class="desc-listado"> <%= product.desc %> </p>
+                            <p class="precio-listado"><%= product.precio %></p>
                             <p class="envio-listado">Envío gratis</p>
                         </div>
                         <div class="agregar-listado">
@@ -57,99 +62,13 @@
                         </div>
                     </article>
 
-                    <article class="articulos-listado">
-                        <div class="imagen-listado">
-                            <a href="productDetail">
-                                <img src="/images/mancuernas.png">
-                            </a>
-                        </div>
-                        <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
-                            <p class="envio-listado">Envío gratis</p>
-                        </div>
-                        <div class="agregar-listado">
-                            <a href="productCart">
-                                <button class="carrito-listado">Agregar al Carrito</button>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="articulos-listado">
-                        <div class="imagen-listado">
-                            <a href="productDetail">
-                                <img src="/images/mancuernas.png">
-                            </a>
-                        </div>
-                        <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
-                            <p class="envio-listado">Envío gratis</p>
-                        </div>
-                        <div class="agregar-listado">
-                            <a href="productCart">
-                                <button class="carrito-listado">Agregar al Carrito</button>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="articulos-listado">
-                        <div class="imagen-listado">
-                            <a href="productDetail">
-                                <img src="/images/mancuernas.png">
-                            </a>
-                        </div>
-                        <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
-                            <p class="envio-listado">Envío gratis</p>
-                        </div>
-                        <div class="agregar-listado">
-                            <a href="productCart">
-                                <button class="carrito-listado">Agregar al Carrito</button>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="articulos-listado">
-                        <div class="imagen-listado">
-                            <a href="productDetail">
-                                <img src="/images/mancuernas.png">
-                            </a>
-                        </div>
-                        <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
-                            <p class="envio-listado">Envío gratis</p>
-                        </div>
-                        <div class="agregar-listado">
-                            <a href="productCart">
-                                <button class="carrito-listado">Agregar al Carrito</button>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="articulos-listado">
-                        <div class="imagen-listado">
-                            <a href="productDetail">
-                                <img src="/images/mancuernas.png">
-                            </a>
-                        </div>
-                        <div class="descripcion-listado">
-                            <h4 class="nombre-listado">Mancuernas a Rosca</h4>
-                            <p class="precio-listado">$ 875</p>
-                            <p class="envio-listado">Envío gratis</p>
-                        </div>
-                        <div class="agregar-listado">
-                            <a href="productCart">
-                                <button class="carrito-listado">Agregar al Carrito</button>
-                            </a>
-                        </div>
-                    </article>
+                    <% }); %>
 
                 </section>
             </div>
-
+            <a href="products/create" >
+                <button type="button">Crear Nuevo Producto</button>
+            </a>
             <div class="paginacion">
                 <ul>
                     <li><a href="#">1</a></li>

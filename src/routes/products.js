@@ -5,10 +5,12 @@ const productsController = require("../controllers/productsController")
 
 router.get("/home", productsController.home);
 
-router.get("/listadoProd", productsController.listadoProd);
+router.get("/products", productsController.listadoProd);
+
+router.get("/products/create", productsController.create);
 
 router.get("/productCart", productsController.productCart);
 
-router.get("/productDetail", productsController.productDetail);
+router.get("/productDetail/:id", productsController.productDetail);
 
 module.exports = router;
