@@ -24,13 +24,15 @@
                 <li><a href="#" class="category-item">Suplementos</a></li>
                 <li><a href="#" class="category-item">Equipos de entrenamientos</a></li>
             </ul>
+            
 
         </section>
         <section class="article">
-            <h2 class="product-title">Nombre del producto</h2>
-            <p>Descripción del producto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam deserunt quis nesciunt alias in perspiciatis labore rem incidunt quibusdam quae, similique iusto voluptate sint adipisci distinctio provident maiores sunt temporibus!</p>
+            <h2 class="product-title"><%= product.nombre %> </h2>
+            <img src="/images/mancuernas.png">
+            <p><%= product.desc %> </p>
             <div class="article-purchase">
-                <h3 class="price-label">Precio:</h3>
+                <h3 class="price-label"><%= product.precio %> </h3> 
                 <form action="#" method="GET">
                     <label for="quantity" class="article-form">Cantidad:</label>
                     <select name="quantity" id="quantity" class="article-form">
@@ -43,21 +45,8 @@
                     </select>
                     <input type="submit" value="Agregar al carrito">
                     <input type="reset" value="Borrar">
+                </form>
                 </div>
-            </form>
-
-
-
-        </section>
-        <section class="article-pic">
-            <div class="pic">
-
-            </div>
-
-            <div class="more-pic">
-
-            </div>
-
 
 
 
@@ -66,6 +55,7 @@
 
 
     </main>
+    
     <%- include('./partials/footer') %>
 
 

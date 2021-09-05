@@ -28,41 +28,29 @@
             <h2 class="destacados">Destacados de la sección</h2>
 
             <div class="items-container">
-                <article class="product-item">
+                <% productList.forEach( producto => {
+                    if (producto.categoria == "Musculacion") {
+                 %>
+                <article class="product-item" width="400px" height="300px">
                     <div class="imagen-producto">
-                        <a href="productDetail">
-                            <img src="/images/mancuernas.png">
+                        <a href="products">
+                            
                         </a>
                     </div>
-                    <div class="descripcion">
-                        <p class="nombre">Mancuernas a Rosca</p>
-                        <p class="precio">$ 875</p>
+                    <div class="product-data">
+                        <p class="nombre"> <%= producto.nombre%> </p>
+                        <br>
+                        <p class="descripcion"> <%= producto.desc%> </p>
+                        <br>
+                        <p class="precio"><%=producto.precio %> </p>
                     </div>
                     <button class="agregar-carrito-btn">Agregar al Carrito</button>
                 </article>
-                <article class="product-item">
-                    <div class="imagen-producto">
-                        <img src="/images/mancuernas.png">
-                    </div>
-                    <div class="descripcion">
-                        <p class="nombre">Mancuernas a Rosca</p>
-                        <p class="precio">$ 875</p>
-                    </div>
-                    <button class="agregar-carrito-btn">Agregar al Carrito</button>
-                </article>
-                <article class="product-item">
-                    <div class="imagen-producto">
-                        <img src="/images/mancuernas.png">
-                    </div>
-                    <div class="descripcion">
-                        <p class="nombre">Mancuernas a Rosca</p>
-                        <p class="precio">$ 875</p>
-                    </div>
-                    <button class="agregar-carrito-btn">Agregar al Carrito</button>
-                </article>
+
+                <% }}) %>
+                
             </div>
         </section>
-
     </main>
     <%- include('./partials/footer') %>
 </body>
