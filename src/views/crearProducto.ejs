@@ -14,16 +14,16 @@
 <body>
     <%- include('./partials/header') %>
         <main>
-            <form action="/products" method="POST">
+            <form action="/products/create" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre">
                 <br>
                 <label for="desc">Descripción:</label>
                 <input type="text" name="desc" id="desc">
                 <br>
-                <label for="imagen">Foto:</label>
+                <!-- <label for="imagen">Foto:</label>
                 <input type="file" name="imagen" id="imagen">
-                <br>
+                <br> -->
                 <label for="categoria"></label>
                 <select name="categoria" id="categoria">
                     <option value="Musculacion">Musculación</option>

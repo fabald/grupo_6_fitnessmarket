@@ -22,5 +22,13 @@
         "imagen": null,
         "categoria": "Equipamiento",
         "precio": "$ 750"
+    },
+    {
+        "id": 4,
+        "nombre": "Elastico",
+        "desc": "Elastico para entrenamientos",
+        "imagen": null,
+        "categoria": "Musculacion",
+        "precio": "$ 458"
     }
 ]

@@ -5,7 +5,7 @@ const productList = JSON.parse(
 );
 
 function writeJSON(data) {
-    fs.writeFileSync(path.join(__dirname, "../data/products.json", JSON.parse(data)))
+   return fs.writeFileSync(path.join(__dirname,"../data/products.json"), JSON.stringify(data));
 }
 
 const controlador = {
@@ -29,23 +29,21 @@ const controlador = {
         res.render(path.join(__dirname, "../views/crearProducto.ejs"))
     },
     store: (req, res) => {
-        console.log(req.body)
-        // const newProduct = {
-        //     id: productList+1 ,
-        //     nombre: req.body.nombre ,
-        //     desc: req.body.desc ,
-        //     imagen: req.body.imagen ,
-        //     categoria: req.body.categoria ,
-        //     precio: req.body.precio
-        // }
 
-        // let addProduct = [...productList, newProduct]
+        const newProduct = {
+            id: productList.length + 1,
+            nombre: req.body.nombre,
+            desc: req.body.desc,
+            imagen: null,
+            categoria: req.body.categoria,
+            precio: req.body.precio
+        }
 
-        // writeJSON(addProduct);
+        let addProduct = [...productList, newProduct]
 
-        res.send(req.body)
+        writeJSON(addProduct);
 
-        // res.redirect("/products")
+        res.redirect("/products");
 
     },
 
@@ -57,7 +55,16 @@ const controlador = {
 
     },
     actualizar: (req, res) => {
-        res.send("edicion actualizada")
+        const updateProduct = productList.map(product => {
+            if (product.id == req.params.id) {
+                product.nombre = req.body.nombre
+                product.desc = req.body.desc
+                product.imagen = req.body.imagen
+                product.categoria = req.body.categoria
+                product.precio = req.body.precio
+            }
+            return updateProduct;
+        });
     }
 }
 

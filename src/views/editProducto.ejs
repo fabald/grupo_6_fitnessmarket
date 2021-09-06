@@ -17,28 +17,25 @@
             <div>
                 <h1>Edición de Productos</h1>
             </div>
-            <form action="/products" method="GET">
+            <form action="/products/<%= product.id %>/actualizar?_method=PUT" method="POST">
 
                 <label for="nombre">Nombre:</label>
-                <textarea id="nombre" name="nombre">
-                    <%= product.nombre %> 
-                    </textarea>
-                <input type="text" name="nombre" id="nombre">
+                <input type="text" id="nombre" name="nombre" value="<%= product.nombre %>">
                 <br>
                 <label for="desc">Descripción:</label>
-                <input type="text" name="desc" id="desc">
+                <input type="text" name="desc" id="desc" value="<%= product.desc %>">
                 <br>
                 <label for="imagen">Foto:</label>
-                <input type="file" name="imagen" id="imagen">
+                <input type="file" name="imagen" id="imagen" value="<%= product.imagen %>" >
                 <br>
                 <label for="categoria"></label>
-                <select name="categoria" id="categoria">
+                <select name="categoria" id="categoria" >
                     <option value="Musculacion">Musculación</option>
                     <option value="Equipamiento">Equipamiento</option>
                 </select>
                 <br>
                 <label for="precio">Precio:</label>
-                <input type="text" name="precio" id="precio">
+                <input type="text" name="precio" id="precio" value="<%= product.precio %>" >
                 <br>
                 <input type="submit" value="Enviar">
             </form>
