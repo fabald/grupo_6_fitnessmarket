@@ -7,6 +7,8 @@ router.get("/home", productsController.home);
 
 router.get("/products", productsController.listadoProd);
 
+router.post("/products", productsController.store);
+
 router.get("/products/create", productsController.create);
 
 router.get("/productCart", productsController.productCart);

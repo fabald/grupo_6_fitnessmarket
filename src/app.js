@@ -5,13 +5,19 @@ const path = require("path")
 const rutaProductos = require("./routes/products")
 const rutaUsuarios = require("./routes/users")
 
+
 app.set("view engine", "ejs")
 
 app.use("/", rutaProductos)
 
-app.use("/", rutaUsuarios)
+app.use("/user", rutaUsuarios)
 
-app.use(express.static(path.join(__dirname,"../public")))
+app.use(express.static(path.join(__dirname, '../public')));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+
+
  
 
 app.get("*", (req,res)=>{
