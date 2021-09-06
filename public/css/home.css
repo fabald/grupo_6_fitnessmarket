@@ -4,11 +4,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 header {
@@ -17,7 +18,6 @@ header {
   justify-content: space-between;
   padding: 2%;
   background-color: #003049;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .logo img {
@@ -184,61 +184,66 @@ main section {
 }
 
 .product-item {
-    border: 0.5px solid grey;
-    display: flex;
-    flex-flow: column wrap;
-    border-radius: 3px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin: 3%;
-
+  width: auto;
+  height: auto;
+  border: 0.5px solid grey;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: [];
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin: 3%;
 }
 
 .imagen-producto {
-    background-color: white;
-    width: 200px;
-    border-bottom: #b1b1b1 solid 0.5px;
-    margin: 5px;
+  background-color: white;
+  width: 200px;
+  border-bottom: #b1b1b1 solid 0.5px;
+  margin: 5px;
 }
 
-.descripcion {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 5px;
+.product-data {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 5px;
 }
 
-.descripcion p {
-    margin: 3px;
+.product-data p {
+  margin: 3px;
 }
 
 .nombre {
-    font-size: 2.6vw;
+  font-size: 2.6vw;
+}
+
+.descripcion {
+  font-size: 2.2vw;
 }
 
 .precio {
-    font-size: 2.4vw;
-    color: #003049;
+  font-size: 2.4vw;
+  color: #003049;
 }
 
 .agregar-carrito-btn {
-    font-size: 2vw;
-    width: 60%;
-    margin: 5% 10%;
-    padding: 1%;
-    border: 0.5px solid gray;
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px rgb(100, 100, 100);
-    background-color: #00EE18;
-    align-self: center ;
+  font-size: 2vw;
+  width: 60%;
+  margin: 5% 10%;
+  padding: 1%;
+  border: 0.5px solid gray;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px rgb(100, 100, 100);
+  background-color: #00ee18;
+  align-self: center;
 }
 
 .items-container {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y:hidden; 
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
-
 
 /*******************Media Querys****************************/
 
@@ -273,7 +278,6 @@ main section {
   header ul {
     font-size: 2vw;
   }
-
   /*-----Logo--------*/
 
   .logo {
@@ -353,6 +357,11 @@ main section {
 
   #buscador::placeholder {
     font-size: 1.5vw;
+  }
+
+  .product-item {
+    width: auto;
+    height: auto;
   }
 }
 

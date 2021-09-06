@@ -1,4 +1,7 @@
-Retrospectiva:
+Retrospectiva Sprint 2:
 
-Consideramos que la organización vinculada a la división de tareas y a las reuniones del grupo es un punto a reforzar en las siguientes etapas. Por otra parte, creemos que el dinamismo implementado en el desarrollo del wireframe ha sido el correcto, y el cual debemos mantener en los próximos sprints.
+- Aprendimos que es buena practica usar archivos CSS separados por vista.
 
+- Vamos a hacer una rama de GIT en donde guardemos el proyecto que hicimos hasta ahora. En el Main, continuaremos relizando las modificaciones de Templates.
+
+- En lineas generales nos organizamos bien. Tendriamos que mejorar los tiempos para poder hacer revisiones generales adicionales entre todos.

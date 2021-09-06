@@ -1,5 +1,9 @@
 /*Login*/
 
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .login-body{
     height: 100vh;
     background-color: #ebebeb;

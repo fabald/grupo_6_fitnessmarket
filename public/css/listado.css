@@ -1,0 +1,205 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.main-listado{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 40px 0px 40px 40px;
+}
+
+.hamburguer-menu p {
+    padding: 10px;
+}
+
+.hamburguer-menu p{
+    background-color: #fcbf49;
+    border-radius: 5px;
+}
+
+.hamburguer-menu:hover {
+    background-color: #003049;
+}
+
+.side-bar {
+    background-color: #fcbf49;
+    border-radius: 5%;
+    padding: 10px;
+    margin: 20px 0px 0px 20px;
+    display: none;
+    flex-flow: row wrap;
+    height: 30%;
+    position: relative;
+}
+
+.side-bar-title {
+    padding: 5px 0px;
+}
+
+.category-item{
+    text-decoration: none;
+    color: white;
+}
+
+.products-listado{
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 40px;
+    position: relative;
+}
+
+.articulos-listado{
+    border: 0.5px solid grey;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin: 20px 20px 20px 20px;
+}
+
+.imagen-listado{
+    background-color: white;
+    width: 400px;
+    border-bottom: #b1b1b1 solid 0.5px;
+    margin: 5px;
+}
+
+.descripcion-listado{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.nombre-listado{
+    margin-top: 10px;
+}
+
+.precio-listado{
+    margin-top: 10px;
+}
+
+.envio-listado{
+    color:#26e947;
+    margin-top: 10px;
+}
+
+.agregar-listado{
+    align-self: center;
+    color: white;
+    margin: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.agregar-listado button{
+    color: white;
+    font-size: 20px;
+    background-color: #26e947;
+    padding: 5px 35px 5px 35px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.agregar-listado button:link{
+    color: white;
+    text-decoration-line: none;
+}
+
+.agregar-listado button:active{
+    color: white;
+    text-decoration-line: none;
+}
+
+.agregar-listado button:visited{
+    color: white;
+    text-decoration-line: none;
+}
+
+.agregar-listado button:hover{
+    color: #003049;
+}
+
+.paginacion{
+    margin: 40px 0px 80px 0px;
+}
+
+.paginacion ul{
+    list-style: none;
+    text-align: center;
+}
+
+.paginacion ul li{
+    display: inline-block;
+    color:rgb(100, 100, 100);
+    background-color: #ebebeb;
+    padding: 15px 25px;
+    border: solid black 1px;
+}
+
+.paginacion ul li a{
+    display: block;
+    text-decoration: none;
+}
+
+.paginacion ul li a:link{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:active{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:visited{
+    color: rgb(63, 63, 63);
+    text-decoration-line: none;
+}
+
+.paginacion ul li a:hover{
+    color: white;
+}
+
+
+
+@media (min-width:992px) {
+    .main-listado{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .products-listado{
+        margin-left: 40px;
+        max-width: 100%;
+        position: relative;
+        flex-flow: row wrap;
+        display: flex;
+    }
+
+    .articulos-listado{
+        margin: 20px 20px 20px 20px;
+    }
+
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hamburguer-menu {
+        display: none;
+    }
+
+}
+
+@media (min-width:630px) {
+
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hamburguer-menu {
+        display: none;
+    }
+
+}

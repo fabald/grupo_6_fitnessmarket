@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a1d1945e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main class="home-main">
+        <section class="seccion-musculacion">
+            <div class="cabecera-musculacion">
+                <div class="txt-boton">
+                    <h2>Equipos Musculación</h2>
+                    <h4> Equipos para aumentar la masa muscular</h4>
+                    <button class="ver-mas-btn">Ver Más</button>
+                </div>
+                <div class="img-container">
+                    <img src="/images/img-musculacion.png">
+                </div>
+            </div>
+            <h2 class="destacados">Destacados de la sección</h2>
+
+            <div class="items-container">
+                <% productList.forEach( producto => {
+                    if (producto.categoria == "Musculacion") {
+                 %>
+                <article class="product-item" width="400px" height="300px">
+                    <div class="imagen-producto">
+                        <a href="products">
+                            
+                        </a>
+                    </div>
+                    <div class="product-data">
+                        <p class="nombre"> <%= producto.nombre%> </p>
+                        <br>
+                        <p class="descripcion"> <%= producto.desc%> </p>
+                        <br>
+                        <p class="precio"><%=producto.precio %> </p>
+                    </div>
+                    <button class="agregar-carrito-btn">Agregar al Carrito</button>
+                </article>
+
+                <% }}) %>
+                
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
