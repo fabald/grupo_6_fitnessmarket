@@ -47,6 +47,11 @@ const controlador = {
 
         // res.redirect("/products")
 
+    },
+
+    edit: (req,res)=>{
+        res.render(path.join(__dirname, "../views/editProducto.ejs"))
+
     }
 }
 
