@@ -14,7 +14,27 @@
 <body>
     <%- include('./partials/header') %>
         <main>
-            Crear Producto
+            <form action="/products" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+                <label for="desc">Descripción:</label>
+                <input type="text" name="desc" id="desc">
+                <br>
+                <label for="imagen">Foto:</label>
+                <input type="file" name="imagen" id="imagen">
+                <br>
+                <label for="categoria"></label>
+                <select name="categoria" id="categoria">
+                    <option value="Musculacion">Musculación</option>
+                    <option value="Equipamiento">Equipamiento</option>
+                </select>
+                <br>
+                <label for="precio">Precio:</label>
+                <input type="text" name="precio" id="precio">
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
         </main>
         <%- include('./partials/footer') %>
 
