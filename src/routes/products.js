@@ -7,7 +7,11 @@ router.get("/home", productsController.home);
 
 router.get("/products", productsController.listadoProd);
 
-router.post("/products", productsController.store);
+router.post("/products", (req, res) => {
+    
+    res.send(req.body.nombre)
+    
+});
 
 router.get("/products/create", productsController.create);
 
@@ -15,6 +19,8 @@ router.get("/productCart", productsController.productCart);
 
 router.get("/productDetail/:id", productsController.productDetail);
 
-router.get("/products/edit", productsController.edit);
+router.get("/products/:id/edit", productsController.edit);
+
+router.put("/products/:id/actualizar", productsController.actualizar);
 
 module.exports = router;

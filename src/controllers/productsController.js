@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const productList = JSON.parse(
-    fs.readFileSync(path.join(__dirname, "../data/products.json"))
+    fs.readFileSync(path.join(__dirname, "../data/products.json"), "utf-8")
 );
 
 function writeJSON(data) {
@@ -42,16 +42,22 @@ const controlador = {
         // let addProduct = [...productList, newProduct]
 
         // writeJSON(addProduct);
-    
-        res.send("asd")
+
+        res.send(req.body)
 
         // res.redirect("/products")
 
     },
 
-    edit: (req,res)=>{
-        res.render(path.join(__dirname, "../views/editProducto.ejs"))
+    edit: (req, res) => {
+        const product = productList.find(
+            producto => producto.id == req.params.id
+        );
+        res.render(path.join(__dirname, "../views/editProducto.ejs"), { product })
 
+    },
+    actualizar: (req, res) => {
+        res.send("edicion actualizada")
     }
 }
 

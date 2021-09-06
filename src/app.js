@@ -1,31 +1,43 @@
-const express = require("express")
-const app = express()
-const port = 3050
-const path = require("path") 
-const rutaProductos = require("./routes/products")
-const rutaUsuarios = require("./routes/users")
+const express = require("express");
+const path = require("path");
+const methodOverride = require("method-override");
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const rutaProductos = require("./routes/products");
+const rutaUsuarios = require("./routes/users");
+const app = express();
+const port = 3050;
 
 
-app.set("view engine", "ejs")
 
-app.use("/", rutaProductos)
+app.use("/", rutaProductos);
 
-app.use("/user", rutaUsuarios)
+app.use("/user", rutaUsuarios);
 
+// ************ Middlewares ************
 app.use(express.static(path.join(__dirname, '../public')));
-
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json())
+app.use(logger('dev'));
+app.use(express.json());
+app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 
- 
+/********Template  */
 
-app.get("*", (req,res)=>{
-    res.send("Ruta no encontrada") 
-})
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, '/views'));
 
 
-app.listen(port, ()=>{
-    console.log("Servidor corriendo en el puerto: http://localhost:"+port+"/home")
 
-})
+app.get("*", (req, res) => {
+    res.send("Ruta no encontrada")
+});
+
+
+app.listen(port, () => {
+    console.log("Servidor corriendo en el puerto: http://localhost:" + port + "/home")
+
+});
+
+module.exports = app;

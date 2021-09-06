@@ -18,9 +18,11 @@
                 <h1>Edición de Productos</h1>
             </div>
             <form action="/products" method="GET">
-                <label for="id">Id del producto que desea editar:</label>
-                <input type = "text" name= "id" id= "id">
+
                 <label for="nombre">Nombre:</label>
+                <textarea id="nombre" name="nombre">
+                    <%= product.nombre %> 
+                    </textarea>
                 <input type="text" name="nombre" id="nombre">
                 <br>
                 <label for="desc">Descripción:</label>
