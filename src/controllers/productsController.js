@@ -5,7 +5,7 @@ const productList = JSON.parse(
 );
 
 function writeJSON(data) {
-   return fs.writeFileSync(path.join(__dirname,"../data/products.json"), JSON.stringify(data));
+    return fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(data));
 }
 
 const controlador = {
@@ -59,12 +59,13 @@ const controlador = {
             if (product.id == req.params.id) {
                 product.nombre = req.body.nombre
                 product.desc = req.body.desc
-                product.imagen = req.body.imagen
                 product.categoria = req.body.categoria
                 product.precio = req.body.precio
             }
             return updateProduct;
         });
+        writeJSON(updateProduct);
+        res.redirect("/productDetail/"+req.params.id);
     }
 }
 

@@ -2,7 +2,7 @@ const { trace } = require("console");
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const urlEncodedParser = express.urlencoded({ extended: false }); //tuve que hacer esto para que funcione
+const urlEncodedParser = express.urlencoded({ extended: false }); //tuve que hacer esto para que funcione POST
 const productsController = require("../controllers/productsController")
 
 router.get("/home", productsController.home);
@@ -18,7 +18,7 @@ router.get("/productDetail/:id", productsController.productDetail);
 
 router.get("/products/:id/edit", productsController.edit);
 
-router.put("/products/:id/actualizar", (req, res) => console.log(req.body));
+router.put("/productDetail/:id/actualizar", productsController.actualizar);
 
 module.exports = router;
 
