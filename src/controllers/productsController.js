@@ -62,7 +62,7 @@ const controlador = {
                 product.categoria = req.body.categoria
                 product.precio = req.body.precio
             }
-            return updateProduct;
+            return product;
         });
         writeJSON(updateProduct);
         res.redirect("/productDetail/"+req.params.id);

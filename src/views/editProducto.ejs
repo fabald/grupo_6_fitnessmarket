@@ -17,7 +17,8 @@
             <div>
                 <h1>Edición de Productos</h1>
             </div>
-            <form action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST">
+            <form action="/productDetail?_method=PUT" method="POST">
+                <!-- /<%= product.id %>/update -->
 
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" value="<%= product.nombre %>">
