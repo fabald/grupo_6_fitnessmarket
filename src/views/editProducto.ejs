@@ -8,38 +8,42 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header-footer.css">
     <link rel="stylesheet" href="/css/crearProducto.css">
+    <link rel="stylesheet" href="/css/editproducto.css">
     <title>Home</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
         <main>
-            <div>
+            <div class ="titulo">
                 <h1>Edición de Productos</h1>
             </div>
-            <form action="/productDetail?_method=PUT" method="POST">
-                <!-- /<%= product.id %>/update -->
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" value="<%= product.nombre %>">
+        <div class = "contenedor-formulario-edit">
+            <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST">
+
+                <label class ="labelform" for="nombre">Nombre:</label>
+                <input class= "inputform" type="text" id="nombre" name="nombre" value="<%= product.nombre %>">
                 <br>
-                <label for="desc">Descripción:</label>
-                <input type="text" name="desc" id="desc" value="<%= product.desc %>">
+                <label class ="labelform" for="desc">Descripción:</label>
+                <input class= "inputform" type="text" name="desc" id="desc" value="<%= product.desc %>">
                 <br>
-                <label for="imagen">Foto:</label>
-                <input type="file" name="imagen" id="imagen" value="<%= product.imagen %>" >
+                <label class ="labelform" for="imagen">Foto:</label>
+                <input class= "inputform" type="file" name="imagen" id="imagen" value="<%= product.imagen %>" >
                 <br>
-                <label for="categoria"></label>
-                <select name="categoria" id="categoria" >
+                <label class ="labelform" for="categoria"></label>
+                <select class ="labelform" name="categoria" id="categoria" >
                     <option value="Musculacion">Musculación</option>
                     <option value="Equipamiento">Equipamiento</option>
                 </select>
                 <br>
-                <label for="precio">Precio:</label>
-                <input type="text" name="precio" id="precio" value="<%= product.precio %>" >
+                <label class="labelform" for="precio">Precio:</label>
+                <input class= "inputform" type="text" name="precio" id="precio" value="<%= product.precio %>" >
                 <br>
-                <input type="submit" value="Enviar">
+                <input class= "inputform boton" type="submit" value="Editar Producto">
             </form>
+        </div>
+
         </main>
         <%- include('./partials/footer') %>
 

@@ -159,6 +159,22 @@
     color: white;
 }
 
+.boton-crear{
+    color:white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 10vw;
+    background: #0085FF;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 20px;
+    
+    
+}
 
 
 @media (min-width:992px) {
