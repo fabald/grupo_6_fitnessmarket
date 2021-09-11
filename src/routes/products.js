@@ -16,9 +16,9 @@ router.get("/productCart", productsController.productCart);
 
 router.get("/productDetail/:id", productsController.productDetail);
 
-router.get("/products/:id/edit", productsController.edit);
+router.get("/productDetail/:id/edit", productsController.edit);
 
-router.put("/productDetail/:id/actualizar", productsController.actualizar);
+router.put("/productDetail", (req, res) => res.send("Llega solicitud PUT"));
 
 module.exports = router;
 
