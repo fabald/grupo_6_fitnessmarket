@@ -48,8 +48,11 @@
                 </form>
                 </div>
                 <a href="/productDetail/<%= product.id %>/edit" >
-                    <button type="button">Editar Producto</button>
+                    <button class="boton-editar" type="button">Editar Producto</button>
                 </a>
+                <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
+                    <button type="submit">Borrar</button>
+                </form>
 
 
 
