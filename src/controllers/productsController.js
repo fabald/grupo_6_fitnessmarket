@@ -65,7 +65,15 @@ const controlador = {
             return product;
         });
         writeJSON(updateProduct);
-        res.redirect("/productDetail/"+req.params.id);
+        res.redirect("/productDetail/" + req.params.id);
+    },
+    destroy: (req, res) => {
+        let productosJSON = productList;
+        let dataNueva = productosJSON.filter(function (product) {
+            return product.id != req.params.id
+        });
+        writeJSON(dataNueva);
+        res.redirect("/products");
     }
 }
 

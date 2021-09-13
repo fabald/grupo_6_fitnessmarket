@@ -47,9 +47,12 @@
                     <input type="reset" value="Borrar">
                 </form>
                 </div>
-                <a href="/products/<%= product.id %>/edit" >
+                <a href="/productDetail/<%= product.id %>/edit" >
                     <button class="boton-editar" type="button">Editar Producto</button>
                 </a>
+                <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
+                    <button type="submit">Borrar</button>
+                </form>
 
 
 
