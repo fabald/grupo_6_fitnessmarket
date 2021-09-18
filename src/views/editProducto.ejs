@@ -20,7 +20,7 @@
             </div>
 
         <div class = "contenedor-formulario-edit">
-            <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST">
+            <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST" >
 
                 <label class ="labelform" for="nombre">Nombre:</label>
                 <input class= "inputform" type="text" id="nombre" name="nombre" value="<%= product.nombre %>">
