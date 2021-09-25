@@ -1,7 +1,5 @@
-Retrospectiva Sprint 2:
+Retrospectiva Sprint 4:
 
-- Aprendimos que es buena practica usar archivos CSS separados por vista.
+- En vista de las complicaciones surgidas en el sprint anterior, debemos mejorar la administración de los tiempos y las tareas a desarrollar.
 
-- Vamos a hacer una rama de GIT en donde guardemos el proyecto que hicimos hasta ahora. En el Main, continuaremos relizando las modificaciones de Templates.
-
-- En lineas generales nos organizamos bien. Tendriamos que mejorar los tiempos para poder hacer revisiones generales adicionales entre todos.
+- Haremos un mayor y mejor uso de la herramienta Trello en las próximas iteraciones.
