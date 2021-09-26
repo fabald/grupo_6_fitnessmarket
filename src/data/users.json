@@ -4,7 +4,7 @@
         "nombre": "",
         "apellido": "",
         "pw": "",
-        "imagen": null,
+        "imagen": "",
         "mail": ""
         
     }
