@@ -14,30 +14,30 @@
 <body>
     <%- include('./partials/header') %>
         <main>
-            <div class ="titulo">
+            <div class="titulo">
                 <h1>Crear nuevo Producto</h1>
             </div>
-            <div class = "contenedor-formulario-edit">
-                <form class="formulario" action="/products/create" method="POST">
-                    <label class ="labelform" for="nombre">Nombre:</label>
-                    <input class= "inputform" type="text" name="nombre" id="nombre">
+            <div class="contenedor-formulario-edit">
+                <form class="formulario" action="/products/create" method="POST" enctype="multipart/form-data">
+                    <label class="labelform" for="nombre">Nombre:</label>
+                    <input class="inputform" type="text" name="nombre" id="nombre">
                     <br>
-                    <label class ="labelform" for="desc">Descripción:</label>
-                    <input class= "inputform" type="text" name="desc" id="desc">
+                    <label class="labelform" for="desc">Descripción:</label>
+                    <input class="inputform" type="text" name="desc" id="desc">
                     <br>
-                    <!-- <label for="imagen">Foto:</label>
-                    <input type="file" name="imagen" id="imagen">
-                    <br> -->
-                    <label class ="labelform" for="categoria"></label>
-                    <select class ="labelform" name="categoria" id="categoria">
+                    <label for="imagen-producto">Foto:</label>
+                    <input type="file" name="imagen-producto" id="imagen-producto">
+                    <br>
+                    <label class="labelform" for="categoria"></label>
+                    <select class="labelform" name="categoria" id="categoria">
                         <option value="Musculacion">Musculación</option>
                         <option value="Equipamiento">Equipamiento</option>
                     </select>
                     <br>
-                    <label class ="labelform" for="precio">Precio:</label>
-                    <input class= "inputform" type="text" name="precio" id="precio">
+                    <label class="labelform" for="precio">Precio:</label>
+                    <input class="inputform" type="text" name="precio" id="precio">
                     <br>
-                    <input class= "inputform boton" type="submit" value="Crear Producto">
+                    <input class="inputform boton" type="submit" value="Crear Producto">
                 </form>
             </div>
 

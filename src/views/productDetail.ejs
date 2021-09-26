@@ -29,7 +29,7 @@
         </section>
         <section class="article">
             <h2 class="product-title"><%= product.nombre %> </h2>
-            <img src="/images/mancuernas.png">
+            <img src="/images/img-productos/<%= product.imagen ? product.imagen : 'default.png' %> ">
             <p><%= product.desc %> </p>
             <div class="article-purchase">
                 <h3 class="price-label"><%= product.precio %> </h3> 

@@ -30,20 +30,27 @@ const controlador = {
     },
     store: (req, res) => {
 
-        const newProduct = {
-            id: productList.length + 1,
-            nombre: req.body.nombre,
-            desc: req.body.desc,
-            imagen: null,
-            categoria: req.body.categoria,
-            precio: req.body.precio
+        if (req.file) {
+            const newProduct = {
+
+                id: productList.length + 1,
+                nombre: req.body.nombre,
+                desc: req.body.desc,
+                imagen: req.file.filename,
+                categoria: req.body.categoria,
+                precio: req.body.precio
+            }
+
+            let addProduct = [...productList, newProduct]
+
+            writeJSON(addProduct);
+
+            res.redirect("/products");
+        } else {
+            res.render(path.join(__dirname, "../views/crearProducto.ejs"))
         }
 
-        let addProduct = [...productList, newProduct]
 
-        writeJSON(addProduct);
-
-        res.redirect("/products");
 
     },
 
