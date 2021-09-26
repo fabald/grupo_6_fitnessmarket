@@ -6,7 +6,7 @@ const productList = JSON.parse(
 
 function writeJSON(data) {
     return fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(data));
-}
+};
 
 const controlador = {
     home: (req, res) => {

@@ -1,1 +1,18 @@
-[{"id":1,"nombre":"Banco Plano","desc":"Banco plano con imagen","imagen":"product-1632004612392.jpg","categoria":"Equipamiento","precio":"$ 890.50"},{"id":2,"nombre":"Mancuerna Hexagonal","desc":"Mancuerna Hexagonal de 25kg","imagen":"product-1632005064113.jpg","categoria":"Musculacion","precio":"$ 650"}]
+[
+    {
+        "id": 1,
+        "nombre": "Banco Plano",
+        "desc": "Banco plano con imagen",
+        "imagen": "product-1632004612392.jpg",
+        "categoria": "Equipamiento",
+        "precio": "$ 890.50"
+    },
+    {
+        "id": 2,
+        "nombre": "Mancuerna Hexagonal",
+        "desc": "Mancuerna Hexagonal de 25kg",
+        "imagen": "product-1632005064113.jpg",
+        "categoria": "Musculacion",
+        "precio": "$ 650"
+    }
+]
