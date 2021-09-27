@@ -1,4 +1,13 @@
-const path = require("path")
+const path = require("path");
+const fs = require("fs");
+
+const userList = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "../data/users.json"), "utf-8")
+);
+
+function writeJSON(data) {
+    return fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(data));
+};
 
 const controladorDos = {
     login: (req,res)=>{
