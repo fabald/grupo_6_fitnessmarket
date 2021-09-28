@@ -38,12 +38,6 @@ const usersController = {
             res.render(path.join(__dirname,"../views/register.ejs"))
         }
     },
-    profile: (req, res) => {
-        const user = userList.find(
-            usuario => usuario.id == req.params.id
-        )
-        res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), { user })
-    },
     processLogin: (req,res) =>{
         let userLogin = userList.findByField("mail", req.body.mail);
         if(userLogin){
@@ -56,6 +50,11 @@ const usersController = {
                 res.redirect("/login")
             }
         }
+    },
+    profile: (req, res) => {
+        res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), { 
+            user: req.session.userLogged 
+        });
     },
     logout: (req,res) =>{
         req.session.destroy();

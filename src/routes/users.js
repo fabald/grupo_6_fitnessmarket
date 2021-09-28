@@ -26,9 +26,9 @@ router.get("/register", guestMiddleware, usersController.register);
 
 router.post("/register/create", upload.single("imagenUsuario"), usersController.store);
 
-router.get("/profile/:id", usersController.profile);
+router.get("/login", usersController.processLogin);
 
-router.get("/login", authMiddleware, usersController.processLogin);
+router.get("/profile", authMiddleware, usersController.profile);
 
 router.get("/logout", usersController.logout);
 
