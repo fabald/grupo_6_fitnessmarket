@@ -24,7 +24,10 @@ router.get("/login", usersController.login);
 
 router.get("/register", usersController.register);
 
-// router.get("/profile", usersController.profile);
+router.get("/profile", usersController.profile);
 
 // router.post("/register/create", usersController.store); //fata middleware con name del campo
+
+router.post("/login", usersController.processLogin);
+
 module.exports = router;

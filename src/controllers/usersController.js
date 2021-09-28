@@ -1,4 +1,5 @@
 const path = require("path");
+const bcrypt = require("bcryptjs");
 const fs = require("fs");
 
 const userList = JSON.parse(
@@ -15,6 +16,18 @@ const controladorDos = {
     },
     register: (req,res)=>{
         res.render(path.join(__dirname, "../views/register.ejs"))
+    },
+    profile: (req,res)=>{
+        res.render(path.join(__dirname, "../views/profile.ejs"))
+    },
+    processLogin: (req,res) =>{
+        for(let i = 0; i < userList.length; i++){
+            if(req.body.email == userList[i].email && bcrypt.compareSync(req.body.password, userList[i].password)) {
+                res.render("/usuarioProfile.ejs")
+            } else {
+                res.redirect("/login")
+            }
+        } 
     }
 }
 
