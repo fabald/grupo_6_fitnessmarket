@@ -4,6 +4,8 @@ const path = require("path");
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
 const { trace } = require("console"); //revisar
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -24,9 +26,11 @@ router.get("/login", usersController.login);
 
 router.get("/register", usersController.register);
 
-router.get("/profile", usersController.profile);
-
 // router.post("/register/create", usersController.store); //fata middleware con name del campo
+
+router.get("/user/profile", authMiddleware, usersController.profile);
+
+router.get("/logout", usersController.logout);
 
 router.post("/login", usersController.processLogin);
 

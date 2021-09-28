@@ -18,16 +18,24 @@ const controladorDos = {
         res.render(path.join(__dirname, "../views/register.ejs"))
     },
     profile: (req,res)=>{
-        res.render(path.join(__dirname, "../views/profile.ejs"))
+        res.render(path.join(__dirname, "../views/usuarioProfile.ejs"))
     },
     processLogin: (req,res) =>{
-        for(let i = 0; i < userList.length; i++){
-            if(req.body.email == userList[i].email && bcrypt.compareSync(req.body.password, userList[i].password)) {
-                res.render("/usuarioProfile.ejs")
+        let userLogin = userList.findByField("email", req.body.email);
+        if(userLogin){
+            let passwordOk = bcrypt.compareSync(req.body.password, userLogin.password);
+            if(passwordOk){
+                delete userLogin.password;
+                req.session.userLogged = userLogin;
+                return res.redirect("/user/profile")
             } else {
                 res.redirect("/login")
             }
-        } 
+        }
+    },
+    logout: (req,res) =>{
+        req.session.destroy();
+        return res.redirect("/login");
     }
 }
 

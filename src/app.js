@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const logger = require('morgan');
 const session = require("express-session")
 const cookieParser = require('cookie-parser');
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const rutaProductos = require("./routes/products");
 const rutaUsuarios = require("./routes/users");
 const app = express();
@@ -20,8 +21,7 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(session({secret: "Mensaje secreto", reseave: false, saveUninitialized: false}));
-
-
+app.use(userLoggedMiddleware);
 
 /********Template *********/
 
