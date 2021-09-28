@@ -8,7 +8,7 @@ function writeJSON(data) {
     return fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(data));
 };
 
-const controlador = {
+const productsController = {
     home: (req, res) => {
         res.render(path.join(__dirname, "../views/index.ejs"), { productList })
     },
@@ -84,4 +84,4 @@ const controlador = {
     }
 }
 
-module.exports = controlador
+module.exports = productsController

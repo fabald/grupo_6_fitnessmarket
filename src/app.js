@@ -12,7 +12,6 @@ const port = 3050;
 
 // ************ Middlewares ************
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use(logger('dev'));
@@ -26,12 +25,12 @@ app.use(methodOverride('_method'));
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
 
+
+
+
 /****Routes  ******/
-app.use("/", rutaProductos);
 app.use("/user", rutaUsuarios);
-
-
-
+app.use("/", rutaProductos);
 
 app.get("*", (req, res) => {
     res.send("Ruta no encontrada")
@@ -40,7 +39,8 @@ app.get("*", (req, res) => {
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto: http://localhost:" + port + "/home")
-
+    
 });
+
 
 module.exports = app;

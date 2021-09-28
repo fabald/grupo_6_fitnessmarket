@@ -1,10 +1,9 @@
+const { trace } = require("console"); //revisar
 const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
-const { trace } = require("console"); //revisar
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../../public/images/img-usuarios'))
@@ -18,13 +17,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-/**/
-
 router.get("/login", usersController.login);
+
+router.post("/register/create", upload.single("imagenUsuario"), usersController.store );
 
 router.get("/register", usersController.register);
 
-// router.get("/profile", usersController.profile);
-
-// router.post("/register/create", usersController.store); //fata middleware con name del campo
 module.exports = router;
