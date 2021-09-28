@@ -18,58 +18,60 @@
 
 <body>
     <%- include('./partials/header') %>
-    <main>
-        <div class="register-contentbox">
-            <h2>Sing-up</h2>
-            <form class="register-form">
-                <div class="register-inputbox">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="register-input" placeholder="Ingresar nombre" name="nombre" id="nombre">
-                </div>
+        <main>
+            <div class="register-contentbox">
+                <h2>Sing-up</h2>
+                <form class="register-form" action="/user/register/create" method="POST" enctype="multipart/form-data">
+                    <div class="register-inputbox">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="register-input" placeholder="Ingresar nombre" name="nombre"
+                            id="nombre">
+                    </div>
 
-                <div class="register-inputbox">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" class="register-input" placeholder="Ingresar apellido" name="apellido"
-                        id="apellido">
-                </div>
-
-
-                <div class="register-inputbox">
-                    <label for="email">Email:</label>
-                    <input type="email" class="register-input" placeholder="Ingresar Email" name="email" id="email">
-                </div>
-
-                <div class="register-inputbox">
-                    <label for="pas">Contraseña:</label>
-                    <input type="password" class="register-input" placeholder="Ingresar Contraseña" name="password"
-                        id="password">
-                </div>
-
-                <div class="register-inputbox register-confirmopass">
-                    <label for="pas">Confirmar contraseña:</label>
-                    <input type="password" class="register-input" placeholder="Ingresar Contraseña" name="password"
-                        id="password">
-                </div>
-
-                <div class ="register-inputbox">
-                    <label for="foto-usuario">Foto perfil:</label>
-                    <input type="file" name="foto-usuario" id="foto-usuario">
-                </div>
+                    <div class="register-inputbox">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="register-input" placeholder="Ingresar apellido" name="apellido"
+                            id="apellido">
+                    </div>
 
 
-                <div>
-                    <input type="submit" value="Registrarme" name="singin" class="register-button">
-                </div>
+                    <div class="register-inputbox">
+                        <label for="email">Email:</label>
+                        <input type="email" class="register-input" placeholder="Ingresar Email" name="email" id="email">
+                    </div>
 
-                <div class="register-login">
-                    <p>¿Ya tenes una cuenta? <a href="/login"> Inicia sesión </a></p>
-                </div>
-            </form>
-        </div>
+                    <div>
+                        <label for="imagenUsuario">Foto:</label>
+                        <input type="file" name="imagenUsuario" id="imagenUsuario">
+                        <br>
+                    </div>
+
+                    <div class="register-inputbox">
+                        <label for="pas">Contraseña:</label>
+                        <input type="password" class="register-input" placeholder="Ingresar Contraseña" name="password"
+                            id="password">
+                    </div>
+
+                    <div class="register-inputbox register-confirmopass">
+                        <label for="pas">Confirmar contraseña:</label>
+                        <input type="password" class="register-input" placeholder="Ingresar Contraseña"
+                            name="confirmPassword" id="password">
+                    </div>
 
 
-    </main>
-    <%- include('./partials/footer') %>
+                    <div>
+                        <input type="submit" value="Registrarme" name="registarUsuario" class="register-button">
+                    </div>
+
+                    <div class="register-login">
+                        <p>¿Ya tenes una cuenta? <a href="login"> Inicia sesión </a></p>
+                    </div>
+                </form>
+            </div>
+
+
+        </main>
+        <%- include('./partials/footer') %>
 
 
 </body>

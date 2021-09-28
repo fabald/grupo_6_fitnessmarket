@@ -20,18 +20,17 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-/**/
+router.get("/login", guestMiddleware, usersController.login);
 
-router.get("/login", usersController.login);
+router.get("/register", guestMiddleware, usersController.register);
 
-router.get("/register", usersController.register);
+router.post("/register/create", upload.single("imagenUsuario"), usersController.store);
 
-// router.post("/register/create", usersController.store); //fata middleware con name del campo
+router.get("/profile/:id", usersController.profile);
 
-router.get("/user/profile", authMiddleware, usersController.profile);
+router.get("/login", authMiddleware, usersController.processLogin);
 
 router.get("/logout", usersController.logout);
 
-router.post("/login", usersController.processLogin);
 
 module.exports = router;

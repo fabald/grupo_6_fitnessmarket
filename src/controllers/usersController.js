@@ -1,6 +1,6 @@
 const path = require("path");
-const bcrypt = require("bcryptjs");
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
 
 const userList = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../data/users.json"), "utf-8")
@@ -10,22 +10,46 @@ function writeJSON(data) {
     return fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(data));
 };
 
-const controladorDos = {
-    login: (req,res)=>{
+
+const usersController = {
+    login: (req, res) => {
         res.render(path.join(__dirname, "../views/login.ejs"))
-    },
-    register: (req,res)=>{
+    },  
+    register: (req, res) => {
         res.render(path.join(__dirname, "../views/register.ejs"))
     },
-    profile: (req,res)=>{
-        res.render(path.join(__dirname, "../views/usuarioProfile.ejs"))
+    store: (req, res) => {
+    
+        if (req.file) {
+            const newUser = {
+
+                id: userList.length +1,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                pw: bcrypt.hashSync(req.body.pw, 10),
+                imagen: req.file.filename,
+                mail: req.body.mail
+            }
+
+            let addProduct = [...userList, newUser]
+            writeJSON(addProduct);
+            res.redirect("/home");
+        } else {
+            res.render(path.join(__dirname,"../views/register.ejs"))
+        }
+    },
+    profile: (req, res) => {
+        const user = userList.find(
+            usuario => usuario.id == req.params.id
+        )
+        res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), { user })
     },
     processLogin: (req,res) =>{
-        let userLogin = userList.findByField("email", req.body.email);
+        let userLogin = userList.findByField("mail", req.body.mail);
         if(userLogin){
-            let passwordOk = bcrypt.compareSync(req.body.password, userLogin.password);
+            let passwordOk = bcrypt.compareSync(req.body.pw, userLogin.pw);
             if(passwordOk){
-                delete userLogin.password;
+                delete userLogin.pw;
                 req.session.userLogged = userLogin;
                 return res.redirect("/user/profile")
             } else {
@@ -39,5 +63,4 @@ const controladorDos = {
     }
 }
 
-
-module.exports = controladorDos
+module.exports = usersController

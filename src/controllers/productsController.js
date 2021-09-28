@@ -8,7 +8,7 @@ function writeJSON(data) {
     return fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(data));
 };
 
-const controlador = {
+const productsController = {
     home: (req, res) => {
         res.render(path.join(__dirname, "../views/index.ejs"), { productList })
     },
@@ -49,11 +49,7 @@ const controlador = {
         } else {
             res.render(path.join(__dirname, "../views/crearProducto.ejs"))
         }
-
-
-
     },
-
     edit: (req, res) => {
         const product = productList.find(
             producto => producto.id == req.params.id
@@ -84,4 +80,4 @@ const controlador = {
     }
 }
 
-module.exports = controlador
+module.exports = productsController
