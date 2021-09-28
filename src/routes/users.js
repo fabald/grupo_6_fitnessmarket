@@ -19,6 +19,8 @@ const upload = multer({ storage });
 
 router.get("/login", usersController.login);
 
+router.get("/profile", usersController.profile)
+
 router.post("/register/create", upload.single("imagenUsuario"), usersController.store );
 
 router.get("/register", usersController.register);
