@@ -60,6 +60,7 @@ main .carrito{
 .descripcion-carrito{
     width: 25%;
     text-align: center;
+    align-self: center;
     display: inline-flex;
     flex-direction: column;
     position: relative;

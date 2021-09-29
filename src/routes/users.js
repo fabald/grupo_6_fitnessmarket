@@ -4,6 +4,8 @@ const path = require("path");
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
 const { trace } = require("console"); //revisar
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -18,13 +20,17 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-/**/
+router.get("/login", guestMiddleware, usersController.login);
 
-router.get("/login", usersController.login);
+router.get("/register", guestMiddleware, usersController.register);
 
-router.get("/register", usersController.register);
+router.post("/register/create", upload.single("imagenUsuario"), usersController.store);
 
-// router.get("/profile", usersController.profile);
+router.get("/login", usersController.processLogin);
 
-// router.post("/register/create", usersController.store); //fata middleware con name del campo
+router.get("/profile", authMiddleware, usersController.profile);
+
+router.get("/logout", usersController.logout);
+
+
 module.exports = router;

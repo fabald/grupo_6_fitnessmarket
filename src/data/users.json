@@ -1,11 +1,10 @@
 [
     {
         "id": 1,
-        "nombre": "",
-        "apellido": "",
-        "pw": "",
-        "imagen": "",
-        "mail": ""
-        
+        "nombre": "KAUFMANN",
+        "apellido": "TOMAS",
+        "pw": "$2a$10$kd1yJcWeFayHBWypImcjoeOw6OTur7LyBCVlOd0jpR.ytL3u1fSZm",
+        "imagen": "userPicture-1632794845730.jpeg",
+        "mail": "tomaskaufmann13@gmail.com"
     }
 ]

@@ -19,12 +19,21 @@
     </div>
     <div class="login-cart">
         <ul class="login">
+            <% if(locals.isLogged) { %>
+            <li><a href="/user/profile">
+                    Mi perfil
+                </a></li>
+            <li><a href="/user/login">
+                    Logout
+                </a></li>
+            <% } else { %> 
             <li><a href="/user/login">
                     Iniciar Sesión
                 </a></li>
             <li><a href="/user/register">
                     Registrate
                 </a></li>
+            <% } %>
         </ul>
 
         <div class="carrito-container">
