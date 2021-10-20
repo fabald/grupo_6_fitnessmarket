@@ -1,0 +1,45 @@
+<header>
+    <div class="logo">
+        <a href="/home">
+            <img src="/images/logo.png">
+    </div>
+    <div class="nav">
+        <ul class="secciones">
+            <li><a href="/home">
+                    Home
+                </a></li>
+            <li><a href="/products">
+                    Productos
+                </a></li>
+            <li><a href="#">
+                    Contacto
+                </a></li>
+        </ul>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar equipos, suplementos...">
+    </div>
+    <div class="login-cart">
+        <ul class="login">
+            <% if(locals.isLogged) { %>
+            <li><a href="/user/profile">
+                    Mi perfil
+                </a></li>
+            <li><a href="/user/login">
+                    Logout
+                </a></li>
+            <% } else { %> 
+            <li><a href="/user/login">
+                    Iniciar Sesión
+                </a></li>
+            <li><a href="/user/register">
+                    Registrate
+                </a></li>
+            <% } %>
+        </ul>
+
+        <div class="carrito-container">
+            <a href="/productCart">
+                <img src="/images/shopping-cart.png">
+            </a>
+        </div>
+    </div>
+</header>

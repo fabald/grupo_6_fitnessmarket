@@ -1,0 +1,207 @@
+/*register*/
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.register-header{
+    background-color: #003049;
+    height: 15vh;
+    width: 100%;
+}
+.register-flexlogo{
+    display: flex;
+    justify-content: baseline;
+}
+
+.register-logo{
+    height: 130%;
+    width: 15%;
+    padding-bottom: 20px;
+}
+
+.register-body{
+    height: 100vh;
+    background-color: #ebebeb;
+}
+
+
+
+.register-contentbox{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 20px auto;  /*ponerle 40px en desktop*/
+    height: 100%;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    border-radius: 3%;
+    height:100%;
+    width: 30vw;
+    min-width: 280px;
+    min-height: 350px;
+
+    
+}
+
+.register-contentbox h2{
+    text-align: center;
+    font-weight: 1000;
+    font-family: sans-serif;
+    color:#003049
+
+}
+
+
+.register-form{
+    padding: 10px;
+    text-align:center;
+    flex-grow: 1;
+    background-color: white;
+    width: 100%;
+    height: 80%;
+    margin:auto;
+    align-content: space-around;
+    
+    
+}
+
+
+
+.register-inputbox{
+    width: 100%;
+    padding: 1px;  /*en d 7*/
+    margin: auto;
+    margin-bottom: 10px;  /*en desktop poner 20*/
+    align-content: center;
+    justify-content: center;
+    color:#003049;
+    display: flex;
+    flex-direction: column;    
+    
+    
+}
+
+.register-inputbox label{
+    margin:0px;
+    padding: 0;
+    font-weight:bold;
+    align-self: flex-start;
+    font-size: 18px;
+    font-family:sans-serif;
+    
+    
+    
+    
+}
+
+.register-inputbox input{
+    width: 80%;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px;
+
+    
+    
+ 
+}
+
+.register-input{
+    border: none;
+    border-bottom: 3px solid rgb(100, 100, 100);
+    background:transparent;
+    outline: none;
+    
+    
+}
+
+
+.register-recordarme{
+    text-align: left;
+    margin-left: 11%;
+    font-family: sans-serif;
+
+}
+
+.register-button{
+    color:white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 30vw;
+    background: #0085FF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /*para version desktop aumentar margin top a 10 o 15% */
+
+}
+
+.register-registrate{
+    font-family: sans-serif;
+    font-size: 12px;
+
+}
+
+@media (min-width: 768px ){
+    .register-contentbox{
+        margin: 40px auto;
+        width: 80%;
+        
+    }
+    .register-inputbox{
+        width: 35%;
+    }
+
+    .register-form{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .register-button{
+        justify-content: left;
+    }
+
+
+
+    .register-inputbox{
+        padding: 7px;  /*en d 7*/
+        margin-bottom: 20px;  /*en desktop poner 20*/
+    }
+
+    .register-button{
+        margin-top: 65px;
+    }
+
+    .register-button{
+        width: 13vw;
+    }
+
+    .register-button{
+        margin:auto;
+        margin-right: 29vw;
+        margin-left: 13%;
+    
+    }
+
+    .register-login{
+        margin-left: 3vw;
+        font-family: sans-serif;
+        
+    }
+
+
+}
+
+
+
+
+
+/*register*/

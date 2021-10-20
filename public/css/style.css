@@ -143,6 +143,14 @@
         width: 40%;
         background-color: aquamarine;
     }
+
+    .contenedor-carrito{
+        max-width: 980px;
+    }
+
+    .producto-carrito div{
+        width: 50%;
+    }
 }
 
 @media (min-width:992px) {
@@ -160,22 +168,37 @@
         flex-direction: column;
     }
 
-    .hamburguer-menu {
-        display: none;
+    .contenedor-carrito{
+        max-width: 1180px;
     }
 
+    .producto-carrito div{
+        width: 25%;
+    }
 }
+
+
 /* Carrito */
 
 main .carrito{
     width: 100%;
     margin: auto;
     padding: 20px;
-    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor-carrito{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    width: 95%;
 }
 
 .titulo-carrito{
     font-size: 20px;
+    font-family: Helvetica;
     color: #f6f4d2;
     background-color: #335c67;
     text-align: center;
@@ -187,14 +210,8 @@ main .carrito{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.contenedor-carrito{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
 .producto-carrito{
-    background-color: #f6f4d2;
+    background-color: #ebebeb;
     border-top: #ebebeb;
     margin-bottom: 10px;
     margin-left: 10px;
@@ -202,40 +219,57 @@ main .carrito{
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 95%;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 12.5em;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .foto-carrito{
-    display:block;
-    margin: auto;
     width: 25%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
+.foto-carrito img{
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+}
+
 
 .descripcion-carrito{
     width: 25%;
+    height: 100%;
     text-align: center;
-    display: inline-flex;
+    align-items: center;
+    display: flex;
     flex-direction: column;
     position: relative;
 }
 
 .descripcion-carrito h4{
+    font-family: Helvetica;
     margin-top: 20px;
 }
 
 .descripcion-carrito p{
     color: #003049;
-    margin-top: 20px;
+    font-family: Helvetica;
+    margin-top: 30px;
 }
 
 .descripcion-carrito button{
     color: white;
+    font-family: Helvetica;
     background-color: #D62828;
     text-align: center;
     border-radius: 5px;
-    margin-left: 60px;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 50%;
 }
 
@@ -259,36 +293,56 @@ main .carrito{
 }
 
 .unidades-carrito{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-family: Helvetica;
     text-align: center;
     align-self: center;
+    align-items: center;
     width: 25%;
+    opacity: 0.7;
+}
+
+.unidades-carrito select{
+    width: auto;
 }
 
 .precio-carrito{
-    color: #003049;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #6abe0a;
+    font-family: Helvetica;
     text-align: center;
     align-self: center;
+    align-items: center;
     width: 25%;
+    height: 100%;
 }
 
 .total-carrito{
     align-self: flex-end;
     font-size: 20px;
+    font-family: Helvetica;
     color: #f6f4d2;
     background-color: #335c67;
     text-align: center;
     opacity: 0.7;
     border: solid 1px rgb(100, 100, 100);
-    margin: -10px 10px 40px 0px;
+    margin-bottom: 20px;
+    margin-top: -10px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     width: 20%;
 }
 
 .continuar-carrito{
     align-self: center;
+    font-family: Helvetica;
     color: white;
     width: 25%;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .continuar-carrito button{
@@ -320,3 +374,190 @@ main .carrito{
 }
 
 /* Carrito */
+
+/*Login*/
+
+.login-body{
+    height: 100vh;
+    background-color: #ebebeb;
+}
+.login-header{
+    background-color: #003049;
+    height: 15vh;
+    width: 100%;
+}
+.login-flexlogo{
+    display: flex;
+    justify-content: baseline;
+
+}
+.login-logo{
+    height: 130%;
+    width: 15%;
+    padding-bottom: 20px;
+
+
+}
+
+.login-contentbox{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 20px auto;  /*ponerle 40px en desktop*/
+    height: 100%;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    border-radius: 3%;
+    height:75vh;
+    width: 30vw;
+    min-width: 280px;
+    min-height: 350px;
+
+}
+
+.login-contentbox h2{
+    text-align: center;
+    font-weight: 1000;
+    font-family: sans-serif
+}
+
+
+.login-form{
+    padding: 10px;
+    text-align:center;
+    flex-grow: 1;
+    background-color: white;
+    width: 100%;
+    height: 80%;
+    margin:auto;
+    align-content: space-around;
+
+
+
+}
+
+
+
+.login-inputbox{
+    width: 100%;
+    padding: 1px;  /*en d 7*/
+    margin: auto;
+    margin-bottom: 10px;  /*en desktop poner 20*/
+    align-content: center;
+    justify-content: center;
+
+
+
+}
+
+.login-inputbox label{
+    margin: 0px;
+    padding: 0;
+    font-weight:bold;
+    align-self: flex-start;
+    font-size: 18px;
+    font-family:sans-serif
+
+
+
+}
+
+.login-inputbox input{
+    width: 80%;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px;
+
+
+
+
+}
+
+.login-input{
+    border: none;
+    border-bottom: 3px solid rgb(100, 100, 100);
+    background:transparent;
+    outline: none;
+
+
+}
+
+
+.login-recordarme{
+    text-align: left;
+    margin-left: 11%;
+    font-family: sans-serif;
+
+}
+
+.login-button{
+    color:white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 30vw;
+    background: #0085FF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /*para version desktop aumentar margin top a 10 o 15% */
+
+}
+
+.login-registrate{
+    font-family: sans-serif;
+    font-size: 12px;
+
+}
+
+@media (min-width: 768px ){
+    .login-contentbox{
+        margin: 40px auto;
+    }
+
+    .login-inputbox{
+        padding: 7px;  /*en d 7*/
+        margin-bottom: 20px;  /*en desktop poner 20*/
+    }
+
+    .login-button{
+        margin-top: 65px;
+    }
+
+    .login-button{
+        width: 13vw;
+    }
+}
+
+/*Login*/
+
+/*register*/
+
+.register-header{
+    background-color: #003049;
+    height: 15vh;
+    width: 100%;
+}
+.register-flexlogo{
+    display: flex;
+    justify-content: baseline;
+}
+
+.register-logo{
+    height: 130%;
+    width: 15%;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+/*register*/
