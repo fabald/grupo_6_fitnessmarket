@@ -22,10 +22,11 @@ CREATE TABLE `products` (
 `product_name` varchar(100) NOT NULL,
 `description` text DEFAULT NULL,
 `price` DECIMAL(4, 1) NOT NULL,
+`shipment_type` varchar(100) DEFAULT NULL,
 `product_img` varchar(200) DEFAULT NULL,
 PRIMARY KEY (`product_id`),
 KEY `products_user_product_id_foreign` (`user_product_id`),
-CONSTRAINT `products_user_notes_id_foreign` FOREIGN KEY (`user_product_id`) REFERENCES `users`(`user_id`)
+CONSTRAINT `products_user_product_id_foreign` FOREIGN KEY (`user_product_id`) REFERENCES `users`(`user_id`)
 );
 
 
@@ -75,21 +76,22 @@ DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
 `cart_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 `buyer_name` varchar(100) NOT NULL,
-`items_quantity` tinyint(50) NOT NULL,
+`buy_date` date DEFAULT NULL,
 `total` DECIMAL(4, 1) NOT NULL,
 PRIMARY KEY (`cart_id`)
 );
 
 
-DROP TABLE IF EXISTS `items_cart`;
-CREATE TABLE `items_cart` (
-`items_cart_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `product_cart`;
+CREATE TABLE `product_cart` (
+`product_cart_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 `id_cart` int(10) NOT NULL,
 `id_product` int(10) NOT NULL,
 PRIMARY KEY (`items_cart_id`),
-KEY `items_cart_id_cart_foreign` (`id_cart`),
-KEY `items_cart_id_product_foreign` (`id_product`),
-CONSTRAINT `items_cart_id_cart_foreign` FOREIGN KEY (`id_cart`) REFERENCES `cart`(`cart_id`),
-CONSTRAINT `items_cart_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products`(`product_id`)
+KEY `product_cart_id_cart_foreign` (`id_cart`),
+KEY `product_cart_id_product_foreign` (`id_product`),
+CONSTRAINT `product_cart_id_cart_foreign` FOREIGN KEY (`id_cart`) REFERENCES `cart`(`cart_id`),
+CONSTRAINT `product_cart_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products`(`product_id`)
 );
+
 
