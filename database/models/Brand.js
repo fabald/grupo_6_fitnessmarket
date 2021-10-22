@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Brand = sequelize.define("Brands",
         {
             // Configuraciones de las columnas.
-            brands_id: {
+            brand_id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false

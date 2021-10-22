@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            id_cart: {
+            cart_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            id_product: {
+            product_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             }
