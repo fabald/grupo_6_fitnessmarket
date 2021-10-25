@@ -6,7 +6,7 @@
     padding: 0px;
 }
 
-a {
+ .category-item, .ft-contact {
     text-decoration: none;
     color: white;
 }
@@ -15,15 +15,16 @@ a {
     list-style: none;
 }
 
-main {
+.main {
     display: flex;
     flex-wrap: wrap;
 }
 
-.hamburguer-menu {
+.hamburguer-menu p{
     background-color: #fcbf49;
     border-radius: 5px;
 }
+
 
 .hamburguer-menu:hover {
     background-color: #003049;
@@ -47,11 +48,11 @@ main {
     padding: 5px 10%;
 }
 
-h3 {
+.price-label {
     padding: 5px;
 }
 
-label, select {
+.article-form{
     width: 50%;
     padding: 5px;
 }
@@ -63,9 +64,11 @@ label, select {
 
 }
 
+.article p {
+    padding: 10px;
+}
 
-
-main section p {
+.hamburguer-menu p {
     padding: 10px;
 }
 
@@ -76,7 +79,7 @@ main section p {
     display: none
 }
 
-footer {
+.footer {
     display: flex;
     color: white;
     background-color: #003049;
@@ -90,7 +93,7 @@ footer {
     padding-bottom: 0.625rem;
 }
 
-footer div {
+.footer div {
     padding: 1.25rem;
     min-width: 12.5rem;
     width: 100%;
@@ -115,12 +118,16 @@ footer div {
     text-align: center;
 }
 
+.fa-facebook, .fa-twitter, .fa-instagram {
+    color: white;
+}
+
 @media (min-width:576px) {
-    footer {
+    .footer {
         justify-content: space-around;
     }
 
-    footer div {
+    .footer div {
         width: 50%;
     }
 
@@ -140,19 +147,19 @@ footer div {
     .contenedor-carrito{
         max-width: 980px;
     }
-    
+
     .producto-carrito div{
         width: 50%;
     }
 }
 
 @media (min-width:992px) {
-    footer {
+    .footer {
         justify-content: space-evenly;
         max-width: 1200px;
     }
 
-    footer div {
+    .footer div {
         width: 25%;
     }
 
@@ -388,8 +395,8 @@ main .carrito{
     height: 130%;
     width: 15%;
     padding-bottom: 20px;
-    
-    
+
+
 }
 
 .login-contentbox{
@@ -407,7 +414,7 @@ main .carrito{
     width: 30vw;
     min-width: 280px;
     min-height: 350px;
-    
+
 }
 
 .login-contentbox h2{
@@ -426,9 +433,9 @@ main .carrito{
     height: 80%;
     margin:auto;
     align-content: space-around;
-    
 
-    
+
+
 }
 
 
@@ -440,9 +447,9 @@ main .carrito{
     margin-bottom: 10px;  /*en desktop poner 20*/
     align-content: center;
     justify-content: center;
-    
-    
-    
+
+
+
 }
 
 .login-inputbox label{
@@ -452,9 +459,9 @@ main .carrito{
     align-self: flex-start;
     font-size: 18px;
     font-family:sans-serif
-    
-    
-    
+
+
+
 }
 
 .login-inputbox input{
@@ -462,10 +469,10 @@ main .carrito{
     font-family: sans-serif;
     font-size: 14px;
     padding: 10px;
-    
-    
-    
- 
+
+
+
+
 }
 
 .login-input{
@@ -473,8 +480,8 @@ main .carrito{
     border-bottom: 3px solid rgb(100, 100, 100);
     background:transparent;
     outline: none;
-    
-    
+
+
 }
 
 
@@ -512,7 +519,7 @@ main .carrito{
 
 @media (min-width: 768px ){
     .login-contentbox{
-        margin: 40px auto; 
+        margin: 40px auto;
     }
 
     .login-inputbox{

@@ -1,10 +1,34 @@
 [
     {
         "id": 1,
-        "nombre": "KAUFMANN",
-        "apellido": "TOMAS",
+        "nombre": "TOMAS",
+        "apellido": "KAUFMANN",
         "pw": "$2a$10$kd1yJcWeFayHBWypImcjoeOw6OTur7LyBCVlOd0jpR.ytL3u1fSZm",
         "imagen": "userPicture-1632794845730.jpeg",
         "mail": "tomaskaufmann13@gmail.com"
+    },
+    {
+        "id": 2,
+        "nombre": "NICOLAS",
+        "apellido": "BLASUTIG",
+        "pw": "",
+        "imagen": "userPicture-image0.jpeg",
+        "mail": "nicoblasutig@gmail.com"
+    },
+    {
+        "id": 3,
+        "nombre": "FABIAN",
+        "apellido": "ALDERETE",
+        "pw": "",
+        "imagen": "userPicture-image1.jpeg",
+        "mail": "fabialderete@gmail.com"
+    },
+    {
+        "id": 4,
+        "nombre": "BRIAN",
+        "apellido": "CATRINI",
+        "pw": "",
+        "imagen": "userPicture-image2.jpeg",
+        "mail": "briancatrini87@gmail.com"
     }
 ]
