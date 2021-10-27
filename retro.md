@@ -1,5 +1,5 @@
-Retrospectiva Sprint 4:
+Retrospectiva Sprint 5:
 
-- En vista de las complicaciones surgidas en el sprint anterior, debemos mejorar la administración de los tiempos y las tareas a desarrollar.
+- Debemos mejorar sustancialmente el trabajo colaborativo, asumiendo las responsabilidades a la hora de encarar los objetivos planteados al inicio de la iteración.
 
-- Haremos un mayor y mejor uso de la herramienta Trello en las próximas iteraciones.
+- Tenemos que elevar el compromiso respecto a los plazos de entrega y al tiempo destinado a las tareas previamente estipuladas.

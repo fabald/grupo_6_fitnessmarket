@@ -12,7 +12,31 @@
         "nombre": "Mancuerna Hexagonal",
         "desc": "Mancuerna Hexagonal de 25kg",
         "imagen": "product-1632005064113.jpg",
-        "categoria": "Musculacion",
+        "categoria": "Equipamiento",
         "precio": "$ 650"
+    },
+    {
+        "id": 3,
+        "nombre": "Soga Para Saltar",
+        "desc": "Soga Para Saltar Naranja Entrenamiento Gym Fitness",
+        "imagen": "product-1632693718371.jpg",
+        "categoria": "Equipamiento",
+        "precio": "$ 399"
+    },
+    {
+        "id": 4,
+        "nombre": "Life Pro Whey",
+        "desc": "Life Pro Whey Protein 2kg New",
+        "imagen": "product-image5.jpeg",
+        "categoria": "Suplementos",
+        "precio": "$ 5822.73"
+    },
+    {
+        "id": 5,
+        "nombre": "Remera Training FILA",
+        "desc": "Remera Training Negra FILA Basic Sport Hombre",
+        "imagen": "product-image6.jpeg",
+        "categoria": "Indumentaria",
+        "precio": "$ 2592"
     }
 ]
