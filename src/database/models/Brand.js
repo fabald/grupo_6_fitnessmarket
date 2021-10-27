@@ -18,5 +18,17 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false,
             //Si no tengo timestamps
         });
+
+    Brand.associate = function(models) {
+    
+            Brand.belongsToMany(models.Product, {
+                    as: 'products',
+                    through: 'products_brands',
+                    foreignKey: 'brand_id',
+                    otherKey: 'product_id',
+                    timestamps: false
+                });
+    
+    }
     return Brand;
 }
