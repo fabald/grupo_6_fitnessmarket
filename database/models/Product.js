@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Product = sequelize.define("Products",
+    const Product = sequelize.define("Product",
         {
             // Configuraciones de las columnas.
             product_id: {

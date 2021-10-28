@@ -1,16 +1,26 @@
 const path = require("path");
 const fs = require("fs");
+const db = require("../../database/models");
+console.log(db.Product);
 const productList = JSON.parse(
-    fs.readFileSync(path.join(__dirname, "../data/products.json"), "utf-8")
+    fs.readFileSync(path.join(__dirname, "../data/products.json"), "utf-8")  // → Esto era de donde tomaba anteriormente los productos
 );
 
 function writeJSON(data) {
     return fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(data));
 };
 
+const allProducts = db.Product.findAll();
+
 const productsController = {
     home: (req, res) => {
-        res.render(path.join(__dirname, "../views/index.ejs"), { productList })
+        allProducts
+            .then((productsList) => {
+                res.render(path.join(__dirname, "../views/index.ejs"), { productList }) //creo que poner esto asi es = a poner productsList: productsList
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     },
     listadoProd: (req, res) => {
         res.render(path.join(__dirname, "../views/listadoProd.ejs"), { productList })
