@@ -1,38 +1,45 @@
 module.exports = (sequelize, DataTypes) => {
-    const Product = sequelize.define("Product",
+    const User = sequelize.define("Users",
         {
             // Configuraciones de las columnas.
-            product_id: {
+            user_id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            user_id: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            product_name: {
+            name: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            description: {
+            last_name: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            user_img: {
                 type: DataTypes.STRING
             },
-            price: {
-                type: DataTypes.INTEGER
-            },
-            shipment_type: {
-                type: DataTypes.STRING
-            },
-            product_img: {
-                type: DataTypes.STRING
+            mail: {
+                type: DataTypes.STRING,
+                allowNull: false
             }
         },
         {
-            tableName: 'products',
+            tableName: 'users',
             //Si el nombre de la tabla no coincide con el del modelo
             timestamps: false,
             //Si no tengo timestamps
         });
-    return Product;
+
+    User.associate = function(models) {
+        User.hasMany(models.Product, {
+            as: 'products',
+            foreignKey: 'user_id'
+        })
+    }
+
+    return User;
 }

@@ -78,7 +78,7 @@ PRIMARY KEY (`cart_id`)
 
 
 DROP TABLE IF EXISTS `product_carts`;
-CREATE TABLE `product_carts` (
+CREATE TABLE `product_carts|` (
 `product_cart_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 `cart_id` int(10) UNSIGNED NOT NULL,
 `product_id` int(10) UNSIGNED NOT NULL,

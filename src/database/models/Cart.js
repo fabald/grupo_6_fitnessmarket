@@ -26,5 +26,17 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false,
             //Si no tengo timestamps
         });
+    
+    Cart.associate = function(models) {
+    
+            Cart.belongsToMany(models.Product, {
+                    as: 'products',
+                    through: 'product_cart',
+                    foreignKey: 'cart_id',
+                    otherKey: 'product_id',
+                    timestamps: false
+                });
+    
+        }
     return Cart;
 }
