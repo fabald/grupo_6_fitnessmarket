@@ -2,13 +2,13 @@ module.exports = (sequelize, DataTypes) => {
     const Cart = sequelize.define("Cart",
         {
             // Configuraciones de las columnas.
-            cart_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            buyer_name: {
-                type: DataTypes.STRING,
+            user_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             buy_date: {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             total: {
-                type: DataTypes.FLOAT,
+                type: DataTypes.DECIMAL(6,2),
                 allowNull: false
             }
         },
@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
         });
     
     Cart.associate = function(models) {
+
+            Cart.belongsTo(models.User, {
+                as: "users",
+                foreignKey: "user_id"
+            })
     
             Cart.belongsToMany(models.Product, {
                     as: 'products',

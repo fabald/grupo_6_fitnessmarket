@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-    const Category = sequelize.define("Categories",
+    const Category = sequelize.define("Category",
         {
             // Configuraciones de las columnas.
-            category_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            category_name: {
+            name: {
                 type: DataTypes.STRING,
                 allowNull: false
             }
@@ -21,12 +21,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Category.associate = function(models) {
     
-        Category.belongsToMany(models.Product, {
+        Category.hasMany(models.Product, {
                 as: 'products',
-                through: 'products_categories',
-                foreignKey: 'category_id',
-                otherKey: 'product_id',
-                timestamps: false
+                foreignKey: 'category_id'
             });
 
     }

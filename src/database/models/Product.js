@@ -2,12 +2,16 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define("Product",
         {
             // Configuraciones de las columnas.
-            product_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
             user_id: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            category_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -21,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             price: {
                 type: DataTypes.INTEGER
             },
-            shipment_type: {
+            brand_name: {
                 type: DataTypes.STRING
             },
             product_img: {
@@ -42,20 +46,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'user_id'
         });
 
-        Product.belongsToMany(models.Category, {
+        Product.belongsTo(models.Category, {
             as: 'categories',
-            through: 'products_categories',
-            foreignKey: 'product_id',
-            otherKey: 'category_id',
-            timestamps: false
-        });
-
-        Product.belongsToMany(models.Brand, {
-            as: 'brands',
-            through: 'products_brands',
-            foreignKey: 'product_id',
-            otherKey: 'brand_id',
-            timestamps: false
+            foreignKey: 'category_id',
         });
         
         Product.belongsToMany(models.Cart, {

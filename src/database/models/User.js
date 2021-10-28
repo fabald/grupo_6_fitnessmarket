@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("Users",
+    const User = sequelize.define("User",
         {
             // Configuraciones de las columnas.
-            user_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            name: {
+            first_name: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             user_img: {
                 type: DataTypes.STRING
             },
-            mail: {
+            email: {
                 type: DataTypes.STRING,
                 allowNull: false
             }

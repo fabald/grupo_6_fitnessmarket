@@ -45,14 +45,14 @@
                     <article class="articulos-listado">
                         <div class="imagen-listado">
                             <a href="productDetail/<%= product.id %>">
-                                <img src="/images/img-productos/<%= product.imagen ? product.imagen : 'default.png' %> ">
+                                <img src="/images/img-productos/<%= product.product_img ? product.product_img : 'default.jfif' %> ">
                             </a>
                         </div>
                         <div class="descripcion-listado">
-                            <h4 class="nombre-listado"><%= product.nombre %></h4>
+                            <h4 class="nombre-listado"><%= product.product_name %></h4>
                             <br>
-                            <p class="desc-listado"> <%= product.desc %> </p>
-                            <p class="precio-listado"><%= product.precio %></p>
+                            <p class="desc-listado"> <%= product.description %> </p>
+                            <p class="precio-listado">$<%= product.price %></p>
                             <p class="envio-listado">Envío gratis</p>
                         </div>
                         <div class="agregar-listado">

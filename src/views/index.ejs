@@ -29,20 +29,57 @@
 
             <div class="items-container">
                 <% productList.forEach( producto => {
-                    if (producto.categoria == "Musculacion") {
+                    if (producto.category_id == 4) {
                  %>
                 <article class="product-item" width="400px" height="300px">
                     <div class="imagen-producto">
                         <a href="products">
-                            <img src="/images/img-productos/<%= producto.imagen ? producto.imagen : 'default.png' %> ">
+                            <img src="/images/img-productos/<%= producto.product_img ? producto.product_img : 'default.jfif' %> ">
                         </a>
                     </div>
                     <div class="product-data">
-                        <p class="nombre"> <%= producto.nombre%> </p>
+                        <p class="nombre"> <%= producto.product_name%> </p>
                         <br>
-                        <p class="descripcion"> <%= producto.desc%> </p>
+                        <p class="descripcion"> <%= producto.description%> </p>
                         <br>
-                        <p class="precio"><%=producto.precio %> </p>
+                        <p class="precio">$<%=producto.price %> </p>
+                    </div>
+                    <button class="agregar-carrito-btn">Agregar al Carrito</button>
+                </article>
+
+                <% }}) %>
+                
+            </div>
+        </section>
+        <section class="seccion-musculacion">
+            <div class="cabecera-musculacion">
+                <div class="txt-boton">
+                    <h2>Equipos Musculación</h2>
+                    <h4> Equipos para aumentar la masa muscular</h4>
+                    <button class="ver-mas-btn">Ver Más</button>
+                </div>
+                <div class="img-container">
+                    <img src="/images/img-musculacion.png">
+                </div>
+            </div>
+            <h2 class="destacados">Destacados de la sección</h2>
+
+            <div class="items-container">
+                <% productList.forEach( producto => {
+                    if (producto.category_id == 2) {
+                 %>
+                <article class="product-item" width="400px" height="300px">
+                    <div class="imagen-producto">
+                        <a href="products">
+                            <img src="/images/img-productos/<%= producto.product_img ? producto.product_img : 'default.jfif' %> ">
+                        </a>
+                    </div>
+                    <div class="product-data">
+                        <p class="nombre"> <%= producto.product_name%> </p>
+                        <br>
+                        <p class="descripcion"> <%= producto.description%> </p>
+                        <br>
+                        <p class="precio">$<%=producto.price %> </p>
                     </div>
                     <button class="agregar-carrito-btn">Agregar al Carrito</button>
                 </article>
