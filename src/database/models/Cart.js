@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         {
-            tableName: 'cart',
+            tableName: 'carts',
             //Si el nombre de la tabla no coincide con el del modelo
             timestamps: false,
             //Si no tengo timestamps
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     
             Cart.belongsToMany(models.Product, {
                     as: 'products',
-                    through: 'product_cart',
+                    through: 'product_carts',
                     foreignKey: 'cart_id',
                     otherKey: 'product_id',
                     timestamps: false

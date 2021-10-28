@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const ProductCart = sequelize.define("ProductCart",
         {
             // Configuraciones de las columnas.
-            product_cart_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         {
-            tableName: 'product_cart',
+            tableName: 'product_carts',
             //Si el nombre de la tabla no coincide con el del modelo
             timestamps: false,
             //Si no tengo timestamps

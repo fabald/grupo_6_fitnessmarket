@@ -6,7 +6,7 @@ const allProducts = db.Product.findAll();
 
 const productsController = {
     home: (req, res) => {
-        console.log("home→ "+db.Product.findAll());
+        console.log("home→ " + db.Product.findAll());
         allProducts
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/index.ejs"), { productList }) //creo que poner esto asi es = a poner productList: productList
@@ -78,15 +78,15 @@ const productsController = {
 
     },
     actualizar: (req, res) => {
-
+        console.log(req.file)
         db.Product.update({
-            product_id: productList.length + 1,
+            id: req.params.id,
             product_name: req.body.nombre,
             description: req.body.desc,
-            product_img: req.file.filename,
+            product_img: req.file.filename, //No esta tomando el file, WHY??
             category_id: req.body.categoria,
             price: req.body.precio
-        },{ 
+        }, {
             where: {
                 id: req.params.id
             }
@@ -96,11 +96,16 @@ const productsController = {
 
     },
     destroy: (req, res) => {
-       db.Product.destroy({
-           where: {
-               id: req.params.id
-           }
-       });
+        db.ProductCart.destroy({
+            where: {
+                product_id: req.params.id   
+            }
+        })
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
         res.redirect("/products");
     }
 }
