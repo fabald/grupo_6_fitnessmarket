@@ -28,11 +28,11 @@
 
         </section>
         <section class="article">
-            <h2 class="product-title"><%= product.nombre %> </h2>
-            <img src="/images/img-productos/<%= product.imagen ? product.imagen : 'default.png' %> ">
-            <p><%= product.desc %> </p>
+            <h2 class="product-title"><%= product.product_name %> </h2>
+            <img src="/images/img-productos/<%= product.product_img ? product.product_img : 'default.png' %> ">
+            <p><%= product.description %> </p>
             <div class="article-purchase">
-                <h3 class="price-label"><%= product.precio %> </h3> 
+                <h3 class="price-label"><%= product.price %> </h3> 
                 <form action="#" method="GET">
                     <label for="quantity" class="article-form">Cantidad:</label>
                     <select name="quantity" id="quantity" class="article-form">

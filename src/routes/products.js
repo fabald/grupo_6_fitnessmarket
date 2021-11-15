@@ -19,7 +19,7 @@ const upload = multer({ storage });
 
 router.get("/home", productsController.home);
 
-router.get("/products", productsController.listadoProd);
+router.get("/products", productsController.listadoProd); //LIST 
 
 router.post("/products/create", upload.single("imagen-producto"), productsController.store);
 

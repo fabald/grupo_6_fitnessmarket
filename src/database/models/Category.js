@@ -1,22 +1,31 @@
 module.exports = (sequelize, DataTypes) => {
-    const Brand = sequelize.define("Brands",
+    const Category = sequelize.define("Category",
         {
             // Configuraciones de las columnas.
-            brand_id: {
+            id: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            brand_name: {
+            name: {
                 type: DataTypes.STRING,
                 allowNull: false
             }
         },
         {
-            tableName: 'brands',
+            tableName: 'categories',
             //Si el nombre de la tabla no coincide con el del modelo
             timestamps: false,
             //Si no tengo timestamps
         });
-    return Brand;
+
+    Category.associate = function(models) {
+    
+        Category.hasMany(models.Product, {
+                as: 'products',
+                foreignKey: 'category_id'
+            });
+
+    }
+    return Category;
 }

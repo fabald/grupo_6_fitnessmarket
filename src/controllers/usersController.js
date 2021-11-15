@@ -1,14 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
+const db = require("../database/models");
 
-const userList = JSON.parse(
-    fs.readFileSync(path.join(__dirname, "../data/users.json"), "utf-8")
-);
-
-function writeJSON(data) {
-    return fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(data));
-};
+const allUsers = db.User.findAll();
 
 
 const usersController = {
@@ -19,24 +14,16 @@ const usersController = {
         res.render(path.join(__dirname, "../views/register.ejs"))
     },
     store: (req, res) => {
+        db.User.create({
+            user_id: userList.length +1,
+            name: req.body.nombre,
+            last_name: req.body.apellido,
+            password: bcrypt.hashSync(req.body.pw, 10),
+            user_img: req.file.filename,
+            email: req.body.mail
+        })
+        res.redirect("/home");
     
-        if (req.file) {
-            const newUser = {
-
-                id: userList.length +1,
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                pw: bcrypt.hashSync(req.body.pw, 10),
-                imagen: req.file.filename,
-                mail: req.body.mail
-            }
-
-            let addProduct = [...userList, newUser]
-            writeJSON(addProduct);
-            res.redirect("/home");
-        } else {
-            res.render(path.join(__dirname,"../views/register.ejs"))
-        }
     },
     processLogin: (req,res) =>{
         let userLogin = userList.findByField("mail", req.body.mail);
