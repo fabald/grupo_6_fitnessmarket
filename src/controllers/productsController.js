@@ -26,6 +26,7 @@ const productsController = {
 
     },
     productCart: (req, res) => {
+        console.log(req.session.cookie);
         allProducts
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/productCart.ejs"), { productList })
@@ -49,9 +50,9 @@ const productsController = {
         res.render(path.join(__dirname, "../views/crearProducto.ejs"))
     },
     store: (req, res) => {
+        console.log(req.session);
         if (req.file) {
             db.Product.create({
-                id: 8, // averiguar como usarle el auto-increment
                 product_name: req.body.nombre,
                 description: req.body.desc,
                 brand_name: req.body.marca,
@@ -59,10 +60,10 @@ const productsController = {
                 category_id: parseInt(req.body.categoria),
                 price: req.body.precio,
                 user_id: 1, //averiguar como hacer esto, habria que logearse y tomar algun valor de ahi?
+                // → primero importarlo y despues tomarlo en req.session.store.get → probar guardarlo cuando se logea el susaurio en la cookie para despues usarlo
             });
         } else {
             db.Product.create({
-                id: 8, // averiguar como usarle el auto-increment
                 product_name: req.body.nombre,
                 description: req.body.desc,
                 brand_name: req.body.marca,
@@ -110,7 +111,7 @@ const productsController = {
                 id: req.params.id,
                 product_name: req.body.nombre,
                 description: req.body.desc,
-                product_img: null,
+               
                 category_id: req.body.categoria,
                 price: req.body.precio
             }, {

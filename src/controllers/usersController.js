@@ -17,11 +17,11 @@ const usersController = {
         console.log(req.body.nombre);
         console.log(req.body.apellido);
         console.log(req.body.password);
-        console.log(req.body.file.filename);
+        console.log(req.file.filename);
         console.log(req.body.email);
         if (req.file) {
             db.User.create({
-                id: 9,
+
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -30,7 +30,6 @@ const usersController = {
             })
         } else {
             db.User.create({
-                user_id: 9,
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
