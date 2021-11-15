@@ -49,16 +49,29 @@ const productsController = {
         res.render(path.join(__dirname, "../views/crearProducto.ejs"))
     },
     store: (req, res) => {
-        db.Product.create({
-            id: 8, // averiguar como usarle el auto-increment
-            product_name: req.body.nombre,
-            description: req.body.desc,
-            brand_name: req.body.marca,
-            product_img: req.file.filename,
-            category_id: parseInt(req.body.categoria),
-            price: req.body.precio,
-            user_id: 1, //averiguar como hacer esto, habria que logearse y tomar algun valor de ahi?
-        });
+        if (req.file) {
+            db.Product.create({
+                id: 8, // averiguar como usarle el auto-increment
+                product_name: req.body.nombre,
+                description: req.body.desc,
+                brand_name: req.body.marca,
+                product_img: req.file.filename,
+                category_id: parseInt(req.body.categoria),
+                price: req.body.precio,
+                user_id: 1, //averiguar como hacer esto, habria que logearse y tomar algun valor de ahi?
+            });
+        } else {
+            db.Product.create({
+                id: 8, // averiguar como usarle el auto-increment
+                product_name: req.body.nombre,
+                description: req.body.desc,
+                brand_name: req.body.marca,
+                product_img: null,
+                category_id: parseInt(req.body.categoria),
+                price: req.body.precio,
+                user_id: 1, //averiguar como hacer esto, habria que logearse y tomar algun valor de ahi?
+            });
+        }
 
         res.redirect("/products");
     },
@@ -78,27 +91,41 @@ const productsController = {
 
     },
     actualizar: (req, res) => {
-        console.log(req.file)
-        db.Product.update({
-            id: req.params.id,
-            product_name: req.body.nombre,
-            description: req.body.desc,
-            product_img: req.file.filename, //No esta tomando el file, WHY??
-            category_id: req.body.categoria,
-            price: req.body.precio
-        }, {
-            where: {
-                id: req.params.id
-            }
-        });
-
+        console.log(req.file);
+        if (req.file) {
+            db.Product.update({
+                id: req.params.id,
+                product_name: req.body.nombre,
+                description: req.body.desc,
+                product_img: req.file.filename, //No esta tomando el file, WHY??
+                category_id: req.body.categoria,
+                price: req.body.precio
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+        } else {
+            db.Product.update({
+                id: req.params.id,
+                product_name: req.body.nombre,
+                description: req.body.desc,
+                product_img: null,
+                category_id: req.body.categoria,
+                price: req.body.precio
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+        }
         res.redirect("/productDetail/" + req.params.id);
 
     },
     destroy: (req, res) => {
         db.ProductCart.destroy({
             where: {
-                product_id: req.params.id   
+                product_id: req.params.id
             }
         })
         db.Product.destroy({
