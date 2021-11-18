@@ -1,13 +1,10 @@
 const path = require("path");
 const db = require("../database/models");
 
-const allProducts = db.Product.findAll();
-
-
 const productsController = {
     home: (req, res) => {
         console.log("home→ " + db.Product.findAll());
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/index.ejs"), { productList }) //creo que poner esto asi es = a poner productList: productList
             })
@@ -16,7 +13,7 @@ const productsController = {
             });
     },
     listadoProd: (req, res) => {
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/listadoProd.ejs"), { productList })
             })
@@ -27,7 +24,7 @@ const productsController = {
     },
     productCart: (req, res) => {
         console.log(req.session.cookie);
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/productCart.ejs"), { productList })
 
