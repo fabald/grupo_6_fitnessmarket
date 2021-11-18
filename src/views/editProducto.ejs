@@ -20,16 +20,15 @@
             </div>
 
         <div class = "contenedor-formulario-edit">
-            <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST" >
-
+            <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label class ="labelform" for="nombre">Nombre:</label>
                 <input class= "inputform" type="text" id="nombre" name="nombre" value="<%= product.product_name %>">
                 <br>
                 <label class ="labelform" for="desc">Descripción:</label>
                 <input class= "inputform" type="text" name="desc" id="desc" value="<%= product.description %>">
                 <br>
-                <label class ="labelform" for="imagen">Foto:</label>
-                <input class= "inputform" type="file" name="imagen" id="imagen">
+                <label class ="labelform" for="imagen-producto">Foto:</label>
+                <input class= "inputform" type="file" name="imagen-producto" id="imagen-producto">
                 <br>
                 <label class ="labelform" for="categoria"></label>
                 <select class ="labelform" name="categoria" id="categoria" >
