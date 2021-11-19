@@ -40,21 +40,23 @@ const usersController = {
 
     },
     processLogin: (req, res) => {
-        let userLogin = db.User.findOne({
+        db.User.findOne({
             where: {
-                mail: req.body.mail
+                email: req.body.email
             }
-        });
-        if (userLogin) {
-            let passwordOk = bcrypt.compareSync(req.body.pw, userLogin.pw);
-            if (passwordOk) {
-                delete userLogin.pw;
-                req.session.userLogged = userLogin;
-                return res.redirect("/user/profile")
-            } else {
-                res.redirect("/login")
-            }
-        }
+        })
+            .then(function (userLogin) {
+                if (userLogin) {
+                    let passwordOk = bcrypt.compareSync(req.body.password, userLogin.password)
+                    if (passwordOk) {
+                        delete userLogin.password;
+                        req.session.userLogged = userLogin;
+                        return res.redirect("/user/profile")
+                    } else {
+                        res.redirect("/user/login")
+                    }
+                }
+            })
     },
     profile: (req, res) => {
         res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), {
