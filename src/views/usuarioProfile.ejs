@@ -18,19 +18,19 @@
     <main>
         <section>
             <div>
-                <h2>Foto perfil <%=user.imagen %></h2>
+                <img src="/images/img-usuarios/<%=user.user_img %>" alt="Foto perfil" height="100px" width="100px">
             </div>
-    
+
             <div>
-                <h2>Nombre <%=user.nombre %></h2>
+                <h2>Nombre:  <%=user.first_name %></h2>
             </div>
-    
+
             <div>
-                <h2>Apellido <%=user.apellido %></h2>
+                <h2>Apellido:  <%=user.last_name %></h2>
             </div>
-    
+
             <div>
-                <h2>Email perfil<%=user.mail %></h2>
+                <h2>Email perfil:  <%=user.email %></h2>
             </div>
         </section>
 
@@ -39,6 +39,6 @@
 
     </main>
     <%- include('./partials/footer') %>
-    
+
 </body>
 </html>

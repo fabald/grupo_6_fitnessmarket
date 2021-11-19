@@ -59,13 +59,14 @@ const usersController = {
             })
     },
     profile: (req, res) => {
+        console.log(req.session.userLogged);
         res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), {
-            user: req.session.userLogged
+                        user: req.session.userLogged
         });
     },
     logout: (req, res) => {
         req.session.destroy();
-        return res.redirect("/login");
+        res.redirect("/user/login");
     }
 }
 
