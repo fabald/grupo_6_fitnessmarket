@@ -17,11 +17,10 @@ const usersController = {
         console.log(req.body.nombre);
         console.log(req.body.apellido);
         console.log(req.body.password);
-        console.log(req.file.filename);
+        //console.log(req.file.filename);
         console.log(req.body.email);
         if (req.file) {
             db.User.create({
-
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -33,15 +32,19 @@ const usersController = {
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
-                user_img: null,
-                email: req.body.mail
+                user_img: "userDefaultPic.jpg",
+                email: req.body.email
             })
         }
         res.redirect("/home");
 
     },
     processLogin: (req, res) => {
-        let userLogin = userList.findByField("mail", req.body.mail);
+        let userLogin = db.User.findOne({
+            where: {
+                mail: req.body.mail
+            }
+        });
         if (userLogin) {
             let passwordOk = bcrypt.compareSync(req.body.pw, userLogin.pw);
             if (passwordOk) {

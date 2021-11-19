@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         const nombreArchivo = "userPicture-"+ Date.now() + path.extname(file.originalname);
-        cb(null, nombreArchivo); 
+        cb(null, nombreArchivo);
     }
 });
 
@@ -26,7 +26,7 @@ router.get("/register", guestMiddleware, usersController.register);
 
 router.post("/register/create", upload.single("imagenUsuario"), usersController.store);
 
-router.get("/login", usersController.processLogin);
+router.post("/login", usersController.processLogin);
 
 router.get("/profile", authMiddleware, usersController.profile);
 
