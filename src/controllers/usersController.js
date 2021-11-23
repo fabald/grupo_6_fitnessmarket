@@ -17,11 +17,10 @@ const usersController = {
         console.log(req.body.nombre);
         console.log(req.body.apellido);
         console.log(req.body.password);
-        console.log(req.file.filename);
+        //console.log(req.file.filename);
         console.log(req.body.email);
         if (req.file) {
             db.User.create({
-
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -33,34 +32,41 @@ const usersController = {
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 password: bcrypt.hashSync(req.body.password, 10),
-                user_img: null,
-                email: req.body.mail
+                user_img: "userDefaultPic.jpg",
+                email: req.body.email
             })
         }
         res.redirect("/home");
 
     },
     processLogin: (req, res) => {
-        let userLogin = userList.findByField("mail", req.body.mail);
-        if (userLogin) {
-            let passwordOk = bcrypt.compareSync(req.body.pw, userLogin.pw);
-            if (passwordOk) {
-                delete userLogin.pw;
-                req.session.userLogged = userLogin;
-                return res.redirect("/user/profile")
-            } else {
-                res.redirect("/login")
+        db.User.findOne({
+            where: {
+                email: req.body.email
             }
-        }
+        })
+            .then(function (userLogin) {
+                if (userLogin) {
+                    let passwordOk = bcrypt.compareSync(req.body.password, userLogin.password)
+                    if (passwordOk) {
+                        delete userLogin.password;
+                        req.session.userLogged = userLogin;
+                        return res.redirect("/user/profile")
+                    } else {
+                        res.redirect("/user/login")
+                    }
+                }
+            })
     },
     profile: (req, res) => {
+        console.log(req.session.userLogged);
         res.render(path.join(__dirname, '../views/usuarioProfile.ejs'), {
-            user: req.session.userLogged
+                        user: req.session.userLogged
         });
     },
     logout: (req, res) => {
         req.session.destroy();
-        return res.redirect("/login");
+        res.redirect("/user/login");
     }
 }
 
