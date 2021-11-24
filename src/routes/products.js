@@ -14,7 +14,16 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({ 
+    storage: storage,
+    fileFilter: function (req, file, callback) {
+        let ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+            return callback(newError('Solo se permiten imágenes'))
+        }
+        callback(null, true)
+    }
+ });
 
 
 router.get("/home", productsController.home);
