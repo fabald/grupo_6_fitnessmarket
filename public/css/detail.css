@@ -7,35 +7,56 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
- .category-item, .ft-contact {
-    text-decoration: none;
-    color: white;
-}
-
-.categories, .contact, .social-net {
-    list-style: none;
-}
-
 .main {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    margin: 40px 0px 40px 40px;
 }
 
 .hamburguer-menu p{
     background-color: #fcbf49;
     border-radius: 5px;
+    padding: 10px;
 }
-
 
 .hamburguer-menu:hover {
     background-color: #003049;
-
-
 }
 
+.side-bar {
+    background-color: #fcbf49;
+    border-radius: 5%;
+    padding: 10px;
+    display: none;
+    flex-flow: row wrap;
+    margin-top: 20px;
+    width: 30%;
+    height: 60%;
+    position: relative;
+}
 
 .side-bar-title {
+    text-align: center;
     padding: 5px 0px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #003049;
+}
+
+.category-item{
+    font-style: italic;
+    text-decoration: none;
+    color: #003049;
+    font-weight: bold;
+}
+
+.article{
+    border: 0.5px solid grey;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin: 20px 20px 20px 20px;
+    align-items: center;
+    justify-content: center;
 }
 
  .product-title {
@@ -43,19 +64,41 @@
     text-align: center;
 }
 
+.article img{
+    align-self: center;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    margin-left: 5px;
+}
+
+.article p {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
 .article-purchase{
     display: flex;
-    flex-wrap: wrap;
-    padding: 5px 10%;
+    flex-flow: row wrap;
+    position: relative;
+    align-items: center;
 }
 
 .price-label {
     padding: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.article form{
+    width: 50%;
+    padding: 5px;
 }
 
 .article-form{
-    width: 50%;
-    padding: 5px;
+    width: 50px;
 }
 
 .pic {
@@ -65,69 +108,50 @@
 
 }
 
-.article p {
-    padding: 10px;
-}
-
-.hamburguer-menu p {
-    padding: 10px;
-}
-
-.side-bar {
-    background-color: #fcbf49;
-    border-radius: 5%;
-    padding: 5px;
-    display: none
-}
-
-.footer {
-    display: flex;
+.article input{
     color: white;
-    background-color: #003049;
-    flex-wrap: wrap;
-    padding: 10px 5px 5px ;
-    margin-top: 10px;
+    font-size: 20px;
+    background-color: #26e947;
+    padding: 5px 35px 5px 35px;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 50%;
 }
 
-.ft-title {
-    font-size: 1.375rem;
-    padding-bottom: 0.625rem;
+.article input:link{
+    color: white;
+    text-decoration-line: none;
 }
 
-.footer div {
-    padding: 1.25rem;
-    min-width: 12.5rem;
-    width: 100%;
+.article input:active{
+    color: white;
+    text-decoration-line: none;
 }
 
-.ft-social {
-    display: flex;
-    align-items: center;
+.article input:visited{
+    color: white;
+    text-decoration-line: none;
 }
 
-.ft-social-list {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    border-top: solid 1px white;
-    padding-top: 1.25rem;
+.article input:hover{
+    color: #003049;
 }
 
-.ft-social-list li {
-    margin: 0.5rem;
-    font-size: 1.25rem;
+.botones{
+    display: inline-flex;
+    position: relative;
+    align-self: center;
+    margin-top: 20px;
     text-align: center;
-}
-
-.fa-facebook, .fa-twitter, .fa-instagram {
-    color: white;
 }
 
 .boton-editar{
     color:white;
     font-size: 20px;
     font-family: sans-serif;
-    font-weight: 200;
+    font-weight: bold;
     border: none;
     outline: none;
     height: 50px;
@@ -136,22 +160,29 @@
     color: #fff;
     font-size: 12px;
     border-radius: 20px;
-    
+    text-align: center;
+    margin-right: 20px;
     
 }
 
+.boton-eliminar{
+    color:white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 10vw;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
 @media (min-width:576px) {
-    .footer {
-        justify-content: space-around;
-    }
-
-    .footer div {
-        width: 50%;
-    }
-
-    .ft-social-list {
-    border-top: none;
-    }
 
     .article {
         width: 60%;
@@ -164,14 +195,6 @@
 }
 
 @media (min-width:992px) {
-    .footer {
-        justify-content: space-evenly;
-        max-width: 1200px;
-    }
-
-    .footer div {
-        width: 25%;
-    }
 
     .side-bar {
         display: flex;
@@ -183,4 +206,3 @@
     }
 
 }
-
