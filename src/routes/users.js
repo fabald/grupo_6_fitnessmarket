@@ -6,6 +6,7 @@ const usersController = require("../controllers/usersController");
 const { trace } = require("console"); //revisar
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+const User = require ("../database/models/User")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -26,12 +27,30 @@ const validateRegister = [
         .isLength({min:2}).withMessage("El nombre debe tener como minimo 2 caracteres."),
     check("email")
         .notEmpty().withMessage("Este campo es Obligatorio.").bail()
-        .isEmail().withMessage("El mail debe ser valido."),
+        .isEmail().withMessage("El mail debe ser valido.").bail()
+        .custom(value => {
+            return User.findAll({where:{email:value}}).then(user => {
+              if (user) {
+                return Promise.reject("Este email ya se encuentra en uso.");
+              }
+            });
+        }),
     check("password")
         .notEmpty().withMessage("Este campo es Obligatorio.").bail()
         .isLength({min:8})
-    // falta validacion de imagen y de chquear mail no existente en base de datos.
+]
 
+const validateLogin = [
+    check("email")
+        .notEmpty().withMessage("Ingresar Email para continuar.").bail()
+        .isEmail().withMessage("El email debe ser valido").bail()
+        .custom(value => {
+            return User.findAll({where:{email:value}}).then(user => {
+              if (!user) {
+                return Promise.reject("El mail no se encuentra registrado.");
+              }
+            });
+        }),
 ]
 
 
@@ -41,7 +60,7 @@ router.get("/register", guestMiddleware, validateRegister,  usersController.regi
 
 router.post("/register/create", upload.single("imagenUsuario"), usersController.store);
 
-router.post("/login", usersController.processLogin);
+router.post("/login", validateLogin,  usersController.processLogin);
 
 router.get("/profile", authMiddleware, usersController.profile);
 

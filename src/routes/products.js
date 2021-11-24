@@ -15,13 +15,21 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+const {check} = require("express-validator")
 
+const validateProduct = [
+    check("nombre")
+        .notEmpty().withMessage("El nombre es obligatorio.").bail()
+        .isLength({min:5}).withMessage("El nombre debe tener como minimo 5 caracteres."),
+    check("desc")
+        .isLength({min:20}).withMessage("La descripción debe tener como minimo 20 caracteres.")
+]
 
 router.get("/home", productsController.home);
 
 router.get("/products", productsController.listadoProd); //LIST
 
-router.post("/products/create", upload.single("imagen-producto"), productsController.store);
+router.post("/products/create", upload.single("imagen-producto"),validateProduct, productsController.store);
 
 router.get("/products/create", productsController.create);
 
@@ -33,7 +41,7 @@ router.get("/productDetail/:id/edit", productsController.edit);
 
 router.delete("/productDetail/:id/delete", productsController.destroy);
 
-router.put("/productDetail/:id/actualizar", upload.single("imagen-producto"), productsController.actualizar);
+router.put("/productDetail/:id/actualizar", upload.single("imagen-producto"),validateProduct, productsController.actualizar);
 
 
 module.exports = router;
