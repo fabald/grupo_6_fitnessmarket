@@ -10,31 +10,32 @@
     font-weight: 1000;
     font-family: sans-serif;
     color: #003049;
+    text-align: center;
+    justify-content: center;
+    margin-right: 80px;
 }
 
 
 .contenedor-formulario-edit{
     display: flex;
-    
-
+    align-items: center;
+    justify-content: center;
 }
 
 .formulario{
     display: flex;
     flex-direction: column;
     margin-right: 100px;
-
+    margin-bottom: 40px;
 }
 
 
 .labelform{
-    margin:0px;
-    padding: 0;
-    font-weight:bold;
+    margin-bottom: 10px;
+    padding: 0px;
+    font-weight: bold;
     align-self: flex-start;
     font-size: 18px;
-    
-
 }
 
 
@@ -42,14 +43,13 @@
     
     outline: none;
     width: 30vw;
-
 }
 
 .boton{
     color:white;
     font-size: 20px;
     font-family: sans-serif;
-    font-weight: 300;
+    font-weight: 300px;
     border: none;
     outline: none;
     height: 40px;
@@ -60,4 +60,19 @@
     border-radius: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+.no-valido{
+    border: 1px solid red;
+}
+
+.valido{
+    border: 1px solid green;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+    display: block;
+    align-self: flex-start;
 }

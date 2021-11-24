@@ -16,7 +16,7 @@
     <main>
         <div class="login-contentbox">
             <h2>Login</h2>
-            <form class="login-form">
+            <form class="login-form" action="/user/login" method="POST">
                 <div class="login-inputbox">
                     <label for="email">Email registrado:</label>
                     <input type="email" class="login-input" placeholder="Ingresar Email" name="email" id="email">
@@ -35,11 +35,15 @@
                     <p>¿Olvidaste tu contraseña? <a href="#">   Recuperala </a></p>
                 </div>
                 <div class="login-registrate">
-                    <p>¿No tienes una cuenta? <a href="#">   Regístrate</a></p>
+                    <p>¿No tienes una cuenta? <a href="/user/register">   Regístrate</a></p>
                 </div>
             </form>
         </div>
     </main>
+
     <%- include('./partials/footer') %>
+
+    <script src="/js/valid-login.js"></script>
+    
 </body>
 </html>

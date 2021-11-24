@@ -1,13 +1,10 @@
 const path = require("path");
 const db = require("../database/models");
 
-const allProducts = db.Product.findAll();
-
-
 const productsController = {
     home: (req, res) => {
         console.log("home→ " + db.Product.findAll());
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/index.ejs"), { productList }) //creo que poner esto asi es = a poner productList: productList
             })
@@ -16,7 +13,7 @@ const productsController = {
             });
     },
     listadoProd: (req, res) => {
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/listadoProd.ejs"), { productList })
             })
@@ -27,7 +24,7 @@ const productsController = {
     },
     productCart: (req, res) => {
         console.log(req.session.cookie);
-        allProducts
+        db.Product.findAll()
             .then((productList) => {
                 res.render(path.join(__dirname, "../views/productCart.ejs"), { productList })
 
@@ -67,7 +64,7 @@ const productsController = {
                 product_name: req.body.nombre,
                 description: req.body.desc,
                 brand_name: req.body.marca,
-                product_img: null,
+                product_img: "default.jpg",
                 category_id: parseInt(req.body.categoria),
                 price: req.body.precio,
                 user_id: 1, //averiguar como hacer esto, habria que logearse y tomar algun valor de ahi?
@@ -92,10 +89,9 @@ const productsController = {
 
     },
     actualizar: (req, res) => {
-        console.log(req.file);
+        console.log(req.body);
         if (req.file) {
             db.Product.update({
-                id: req.params.id,
                 product_name: req.body.nombre,
                 description: req.body.desc,
                 product_img: req.file.filename, //No esta tomando el file, WHY??
@@ -108,10 +104,9 @@ const productsController = {
             });
         } else {
             db.Product.update({
-                id: req.params.id,
                 product_name: req.body.nombre,
                 description: req.body.desc,
-               
+                product_img: "default.jpg",
                 category_id: req.body.categoria,
                 price: req.body.precio
             }, {

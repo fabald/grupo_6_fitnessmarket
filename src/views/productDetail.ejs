@@ -32,7 +32,7 @@
             <img src="/images/img-productos/<%= product.product_img ? product.product_img : 'default.jfif' %> ">
             <p><%= product.description %> </p>
             <div class="article-purchase">
-                <h3 class="price-label"><%= product.price %> </h3> 
+                <h3 class="price-label">$<%= product.price %> </h3> 
                 <form action="#" method="GET">
                     <label for="quantity" class="article-form">Cantidad:</label>
                     <select name="quantity" id="quantity" class="article-form">
@@ -43,22 +43,18 @@
                         <option value="5">5</option>
                         <option value="6">6</option>
                     </select>
-                    <input type="submit" value="Agregar al carrito">
-                    <input type="reset" value="Borrar">
                 </form>
-                </div>
-                <a href="/productDetail/<%= product.id %>/edit" >
-                    <button class="boton-editar" type="button">Editar Producto</button>
-                </a>
-                <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
-                    <button type="submit">Borrar</button>
-                </form>
-
-
-
+            </div>
+            <input type="submit" value="Agregar al carrito">
         </section>
-
-
+        <section class="botones">
+        <a href="/productDetail/<%= product.id %>/edit" >
+            <button class="boton-editar" type="button">Editar Producto</button>
+        </a>
+        <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
+            <button class="boton-eliminar" type="submit">Eliminar</button>
+        </form>
+        </section>
 
     </main>
     

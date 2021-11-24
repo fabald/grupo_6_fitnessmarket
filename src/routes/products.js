@@ -19,7 +19,7 @@ const upload = multer({ storage });
 
 router.get("/home", productsController.home);
 
-router.get("/products", productsController.listadoProd); //LIST 
+router.get("/products", productsController.listadoProd); //LIST
 
 router.post("/products/create", upload.single("imagen-producto"), productsController.store);
 
@@ -37,4 +37,3 @@ router.put("/productDetail/:id/actualizar", upload.single("imagen-producto"), pr
 
 
 module.exports = router;
-

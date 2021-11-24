@@ -38,11 +38,11 @@
     width: 50%;
     box-shadow: 0px 0px 10px rgb(100,100,100);
     border-radius: 3%;
-    height:100%;
+    height:100vh;
     width: 30vw;
     min-width: 280px;
     min-height: 350px;
-
+    position: relative;
     
 }
 
@@ -64,8 +64,6 @@
     height: 80%;
     margin:auto;
     align-content: space-around;
-    
-    
 }
 
 
@@ -77,23 +75,18 @@
     margin-bottom: 10px;  /*en desktop poner 20*/
     align-content: center;
     justify-content: center;
-    color:#003049;
+    color:#003049; 
     display: flex;
-    flex-direction: column;    
-    
-    
+    flex-direction: column;
 }
 
 .register-inputbox label{
     margin:0px;
-    padding: 0;
+    padding: 0px;
     font-weight:bold;
     align-self: flex-start;
     font-size: 18px;
     font-family:sans-serif;
-    
-    
-    
     
 }
 
@@ -148,6 +141,21 @@
     font-family: sans-serif;
     font-size: 12px;
 
+}
+
+.no-valido{
+    border: 1px solid red;
+}
+
+.valido{
+    border: 1px solid green;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+    display: block;
+    align-self: flex-start;
 }
 
 @media (min-width: 768px ){
