@@ -3,7 +3,6 @@ const router = express.Router();
 const path = require("path");
 const multer = require('multer');
 const usersController = require("../controllers/usersController");
-const { trace } = require("console"); //revisar
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const User = require ("../database/models/User")
@@ -29,7 +28,7 @@ const validateRegister = [
         .notEmpty().withMessage("Este campo es Obligatorio.").bail()
         .isEmail().withMessage("El mail debe ser valido.").bail()
         .custom(value => {
-            return User.findAll({where:{email:value}}).then(user => {
+            return User.findOne({where:{email:value}}).then(user => {
               if (user) {
                 return Promise.reject("Este email ya se encuentra en uso.");
               }
@@ -37,7 +36,20 @@ const validateRegister = [
         }),
     check("password")
         .notEmpty().withMessage("Este campo es Obligatorio.").bail()
-        .isLength({min:8})
+        .isLength({min:8}),
+    check("imagenUsuario")
+        .custom(function(value, {req} ){
+            return req.file
+        })
+        .withMessage("Imagen requerida")
+        .bail()
+        .custom(function(value, {req}){
+            let acceptExtname = [".jpg", "jpeg", "png", "JPG", "JPEG", "PNG"]
+            let extname = path.extname(req.file.originalname)
+            return acceptExtname.includes(extname)
+        })
+
+
 ]
 
 const validateLogin = [
@@ -45,9 +57,9 @@ const validateLogin = [
         .notEmpty().withMessage("Ingresar Email para continuar.").bail()
         .isEmail().withMessage("El email debe ser valido").bail()
         .custom(value => {
-            return User.findAll({where:{email:value}}).then(user => {
+            return User.findOne({where:{email:value}}).then(user => {
               if (!user) {
-                return Promise.reject("El mail no se encuentra registrado.");
+                return Promise.reject("El usuario y contraseña no coinciden.");
               }
             });
         }),
