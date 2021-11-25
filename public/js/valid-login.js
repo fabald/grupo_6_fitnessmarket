@@ -19,6 +19,7 @@ window.addEventListener('load', function (){
             element.parentElement.innerHTML += '<span class="error">* Debes completar este campo</span>'
         } else {
             inputvalid(element)
+            formLogin.submit()
         }
     }
 
@@ -31,26 +32,25 @@ window.addEventListener('load', function (){
 
     loginInputs.forEach(
         input => input.addEventListener('blur', ()=>{
-            isvalid(input);
             let inputName = input.name;
             if(inputName === 'email'){
                 let isCharEmail = /\S+@\S+\.\S+/
                 let inputValue = input.value
                 if(! isCharEmail.test(inputValue)){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Email inválido</span>'
+                    input.nextElementSibling.innerHTML = '* Email inválido'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             } else if(inputName === 'password'){
                 let inputValue = input.value
                 if(inputValue.length < 8){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 8 o más caracteres</span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 8 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             }
                 

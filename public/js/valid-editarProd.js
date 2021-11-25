@@ -2,7 +2,7 @@ window.addEventListener('load', function (){
 
     let formEditar = document.querySelector('form.formulario');
     let allInputsEditar = formEditar.querySelectorAll('input.inputform');
-    let imgProducto = document.querySelector('#imagen-producto')
+    let imagenProducto = document.querySelector('#imagen-producto')
 
     function inputvalid(element, status = true){
         if(status){
@@ -20,6 +20,7 @@ window.addEventListener('load', function (){
             element.parentElement.innerHTML += '<span class="error">* Este campo es obligatorio</span>'
         } else {
             inputvalid(element)
+            formEditar.submit()
         }
     }
 
@@ -32,45 +33,57 @@ window.addEventListener('load', function (){
 
     allInputsEditar.forEach(
         input => input.addEventListener('blur', ()=>{
-            isvalid(input);
             let inputName = input.name;
             if(inputName === 'nombre'){
                 let inputValue = input.value
                 if(inputValue.length < 5){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 5 o más caracteres<span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 5 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             }else if(inputName === 'desc'){
                 let inputValue = input.value
                 if(inputValue.length < 20){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 20 o más caracteres<span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 20 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             }else if(inputName === 'marca'){
                 let inputValue = input.value
                 if(inputValue.length < 2){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 2 o más caracteres<span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 2 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
+                }
+            }else if(inputName === 'precio'){
+                let isCharPrice = /^\d+(,\d{1,2})?$/i
+                let inputValue = input.value
+                if(! isCharPrice.test(inputValue)){
+                    inputvalid(input, false)
+                    input.nextElementSibling.innerHTML = '* Precio inválido'
+                } else{
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             }
-        }))
+    }))
     
-    imgProducto.addEventListener('blur', ()=>{
+    imagenProducto.addEventListener('change', ()=>{
         let isCharImg = /(.jpg|.jpeg|.png|.gif)$/i
         let imagenValue = imagenProducto.value
         if(! isCharImg.test(imagenValue)){
-            inputvalid()
-            this.innerHTML += '<span class="error">* Archivo inválido</span>'
+            inputvalid(imagenProducto, false)
+            imagenProducto.nextElementSibling.innerHTML = '* Solo se permiten imágenes'
+        } else{
+            imagenProducto.nextElementSibling.innerHTML = ''
+            inputvalid(imagenProducto)
         }
-        })
+    })
     
 })

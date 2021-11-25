@@ -23,15 +23,19 @@
             <form class="formulario" action="/productDetail/<%= product.id %>/actualizar?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label class ="labelform" for="nombre">Nombre:</label>
                 <input class= "inputform" type="text" id="nombre" name="nombre" value="<%= product.product_name %>">
+                <span class="error"></span>
                 <br>
                 <label class ="labelform" for="desc">Descripción:</label>
                 <input class= "inputform" type="text" name="desc" id="desc" value="<%= product.description %>">
+                <span class="error"></span>
                 <br>
                 <label class="labelform" for="marca">Marca:</label>
                 <input class="inputform" type="text" name="marca" id="marca">
+                <span class="error"></span>
                 <br>
                 <label class ="labelform" for="imagen-producto">Foto:</label>
                 <input class= "inputform" type="file" name="imagen-producto" id="imagen-producto">
+                <span class="error"></span>
                 <br>
                 <label class ="labelform" for="categoria"></label>
                 <select class ="labelform" name="categoria" id="categoria" >
@@ -43,6 +47,7 @@
                 <br>
                 <label class="labelform" for="precio">Precio:</label>
                 <input class= "inputform" type="text" name="precio" id="precio" value=" $ <%= product.price %>" >
+                <span class="error"></span>
                 <br>
                 <input class= "boton" type="submit" value="Editar Producto">
             </form>

@@ -1,4 +1,4 @@
-const { trace } = require("console"); //revisar
+const {check} = require("express-validator")
 const express = require("express");
 const router = express.Router();
 const path = require("path");

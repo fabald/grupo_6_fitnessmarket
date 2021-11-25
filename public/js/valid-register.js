@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
     let formRegister = document.querySelector('form.register-form');
-    let allInputs = formRegister.querySelectorAll('input.register-input');
+    let allInputs = formRegister.querySelectorAll('.register-inputbox input');
     let imagenUsuario = document.querySelector('#imagenUsuario');
 
     function inputvalid(element, status = true){
@@ -20,6 +20,7 @@ window.addEventListener('load', function(){
             element.parentElement.innerHTML += '<span class="error">* Este campo es obligatorio</span>'
         } else {
             inputvalid(element)
+            formRegister.submit()
         }
     }
 
@@ -32,69 +33,55 @@ window.addEventListener('load', function(){
 
     allInputs.forEach(
         input => input.addEventListener('blur', ()=>{
-            isvalid(input);
             let inputName = input.name;
             if(inputName === 'nombre' || inputName === 'apellido'){
                 let inputValue = input.value
                 if(inputValue.length < 2){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 2 o más caracteres<span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 2 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             } else if(inputName === 'email'){
                 let isCharMail = /\S+@\S+\.\S+/
                 let inputValue = input.value
                 if(! isCharMail.test(inputValue)){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Email inválido</span>'
+                    input.nextElementSibling.innerHTML = '* Email inválido'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             } else if(inputName === 'password' || inputName === 'confirmPassword'){
                 let inputValue = input.value
                 if(inputValue.length < 8){
                     inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Este campo debe tener 8 o más caracteres</span>'
+                    input.nextElementSibling.innerHTML = '* Este campo debe tener 8 o más caracteres'
                 } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
+                    input.nextElementSibling.innerHTML = ''
+                    inputvalid(input)
                 }
             }
                 
         }))
     
-    imagenUsuario.addEventListener('blur', ()=>{
+    imagenUsuario.addEventListener('change', ()=>{
         let isCharImg = /(.jpg|.jpeg|.png|.gif)$/i
         let imagenValue = imagenUsuario.value
         if(! isCharImg.test(imagenValue)){
-            inputvalid()
-            this.innerHTML += '<span class="error">* Archivo inválido</span>'
+            inputvalid(imagenUsuario, false)
+            imagenUsuario.nextElementSibling.innerHTML = '* Archivo inválido'
+        } else{
+            imagenUsuario.nextElementSibling.innerHTML = ''
+            inputvalid(imagenUsuario)
         }
         })
 
 
 });
 
-/*
 
-
-
- } else if(inputName === 'imagenUsuario'){
-                let isCharImg = /.(gif|jpeg|jpg|png)$/i
-                let inputValue = input.value
-                if(! isCharImg.test(inputValue)){
-                    inputvalid(input, false)
-                    input.parentElement.innerHTML += '<span class="error">* Archivo inválido</span>'
-                } else{
-                    let error = input.parentElement.querySelector('.error')
-                    input.parentElement.removeChild(error)
-                }
-    
-
-*/
 
 
 
