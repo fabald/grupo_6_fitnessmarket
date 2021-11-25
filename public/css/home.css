@@ -197,7 +197,7 @@ main section {
   background-color: white;
   width: 200px;
   border-bottom: #b1b1b1 solid 0.5px;
-  margin: 5px;
+  margin: auto;
 }
 
 .product-data {
