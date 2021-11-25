@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require('multer');
-const productsController = require("../controllers/productsController");
+const productsController = require("../controllers/productsController"); 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../../public/images/img-productos'))
