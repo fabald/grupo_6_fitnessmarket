@@ -32,7 +32,19 @@ const validateProduct = [
         .notEmpty().withMessage("El nombre es obligatorio.").bail()
         .isLength({min:5}).withMessage("El nombre debe tener como minimo 5 caracteres."),
     check("desc")
-        .isLength({min:20}).withMessage("La descripción debe tener como minimo 20 caracteres.")
+        .isLength({min:20}).withMessage("La descripción debe tener como minimo 20 caracteres."),
+    check("imagenUsuario")
+        .custom(function(value, {req} ){
+            return req.file
+        })
+        .withMessage("Imagen requerida")
+        .bail()
+        .custom(function(value, {req}){
+            let acceptExtname = [".jpg", "jpeg", "png", "JPG", "JPEG", "PNG"]
+            let extname = path.extname(req.file.originalname)
+            return acceptExtname.includes(extname)
+        })
+    
 ]
 
 router.get("/home", productsController.home);
