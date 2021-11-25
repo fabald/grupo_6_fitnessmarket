@@ -25,6 +25,8 @@ const upload = multer({
     }
  });
 
+ const {check} = require("express-validator")
+
 const validateProduct = [
     check("nombre")
         .notEmpty().withMessage("El nombre es obligatorio.").bail()
