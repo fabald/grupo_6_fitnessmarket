@@ -31,7 +31,7 @@
                 <% productList.forEach( producto => {
                     if (producto.category_id == 4) {
                  %>
-                <article class="product-item" width="400px" height="300px">
+                <article class="product-item">
                     <div class="imagen-producto">
                         <a href="products">
                             <img src="/images/img-productos/<%= producto.product_img ? producto.product_img : 'default.jpg' %> ">
@@ -59,7 +59,7 @@
                     <button class="ver-mas-btn">Ver Más</button>
                 </div>
                 <div class="img-container">
-                    <img src="/images/suplementos.jpg">
+                    <img src="/images/img-suplementos.jpg">
                 </div>
             </div>
             <h2 class="destacados">Destacados de la sección</h2>
