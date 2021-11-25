@@ -138,6 +138,25 @@
 
 }
 
+.login-button:link{
+    color: white;
+    text-decoration-line: none;
+}
+
+.login-button:active{
+    color: white;
+    text-decoration-line: none;
+}
+
+.login-button:visited{
+    color: white;
+    text-decoration-line: none;
+}
+
+.login-button:hover{
+    color: #003049;
+}
+
 .login-registrate{
     font-family: sans-serif;
     font-size: 12px;
@@ -164,6 +183,7 @@ p{
     display: block;
     align-self: flex-start;
 }
+
 
 @media (min-width: 768px ){
     .login-contentbox{

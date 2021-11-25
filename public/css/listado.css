@@ -99,6 +99,7 @@
     color: white;
     font-size: 20px;
     background-color: #26e947;
+    font-weight: bold;
     padding: 5px 35px 5px 35px;
     border-radius: 10px;
     align-self: center;
@@ -165,6 +166,10 @@
 }
 
 .nuevo-producto{
+    align-self: center;
+    color: white;
+    margin: 20px;
+    position: relative;
     text-align: center;
 }
 
@@ -178,13 +183,30 @@
     margin-left: 20px;
     outline: none;
     height: 50px;
-    width: 10vw;
+    width: 15vw;
     background: #0085FF;
     color: #fff;
     font-size: 12px;
     border-radius: 20px;
-    
-    
+}
+
+.boton-crear:link{
+    color: white;
+    text-decoration-line: none;
+}
+
+.boton-crear:active{
+    color: white;
+    text-decoration-line: none;
+}
+
+.boton-crear:visited{
+    color: white;
+    text-decoration-line: none;
+}
+
+.boton-crear:hover{
+    color: #003049;
 }
 
 

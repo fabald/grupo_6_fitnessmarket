@@ -134,7 +134,25 @@
     margin-top: 5%;
     margin-bottom: 5%;
     /*para version desktop aumentar margin top a 10 o 15% */
+}
 
+.register-button:link{
+    color: white;
+    text-decoration-line: none;
+}
+
+.register-button:active{
+    color: white;
+    text-decoration-line: none;
+}
+
+.register-button:visited{
+    color: white;
+    text-decoration-line: none;
+}
+
+.register-button:hover{
+    color: #003049;
 }
 
 .register-registrate{

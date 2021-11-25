@@ -28,6 +28,7 @@
 
         </section>
         <section class="article">
+            <article class="product-detail-article">
             <h2 class="product-title"><%= product.product_name %> </h2>
             <img src="/images/img-productos/<%= product.product_img ? product.product_img : 'default.jfif' %> ">
             <p><%= product.description %> </p>
@@ -46,14 +47,17 @@
                 </form>
             </div>
             <input type="submit" value="Agregar al carrito">
+            </article>
         </section>
         <section class="botones">
-        <a href="/productDetail/<%= product.id %>/edit" >
-            <button class="boton-editar" type="button">Editar Producto</button>
-        </a>
-        <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
-            <button class="boton-eliminar" type="submit">Eliminar</button>
-        </form>
+            <article class="botones-article">
+            <a href="/productDetail/<%= product.id %>/edit" >
+                <button class="boton-editar" type="button">Editar Producto</button>
+            </a>
+             <form action="/productDetail/<%= product.id %>/delete?_method=DELETE" method="POST">
+                <button class="boton-eliminar" type="submit">Eliminar</button>
+            </form>
+            </article>
         </section>
 
     </main>

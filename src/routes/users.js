@@ -6,6 +6,7 @@ const usersController = require("../controllers/usersController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const User = require ("../database/models/User")
+const {check} = require("express-validator")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -18,7 +19,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-const {check} = require("express-validator")
 
 const validateRegister = [
     check("nombre")
