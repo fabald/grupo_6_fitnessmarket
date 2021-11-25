@@ -118,7 +118,7 @@ header li a {
 main section {
   display: flex;
   flex-flow: row wrap;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /***Seccion Musculacion***/
@@ -129,6 +129,7 @@ main section {
   border-top: 2px solid black;
   display: flex;
   width: 100%;
+  height: 518px;
   margin-bottom: 20px;
 }
 
@@ -153,6 +154,7 @@ main section {
   font-weight: 100;
   color: white;
   margin: 5% 0;
+  font-style:italic;
 }
 
 .txt-boton button {
@@ -165,6 +167,25 @@ main section {
   box-shadow: 0px 0px 2px rgb(100, 100, 100);
 }
 
+.txt-boton button:link{
+  color: #003049;
+  text-decoration-line: none;
+}
+
+.txt-boton button:active{
+  color: #003049;
+  text-decoration-line: none;
+}
+
+.txt-boton button:visited{
+  color: #003049;
+  text-decoration-line: none;
+}
+
+.txt-boton button:hover{
+  color: white;
+}
+
 .img-container {
   width: 60%;
   border-left: 2px solid black;
@@ -172,7 +193,7 @@ main section {
 
 .img-container img {
   width: 100%;
-  height: auto;
+  height: 516px;
 }
 
 .destacados {
@@ -181,21 +202,29 @@ main section {
   width: 100%;
 }
 
+.items-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-left: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
+
 .product-item {
-  width: auto;
-  height: auto;
+  width: 400px;
   border: 0.5px solid grey;
   display: flex;
   flex-flow: column wrap;
-  justify-content: [];
   border-radius: 3px;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  margin: 3%;
+  margin: 20px 20px 20px 20px;
 }
 
 .imagen-producto {
   background-color: white;
-  width: 200px;
+  width: 380px;
+  height: 400px;
   border-bottom: #b1b1b1 solid 0.5px;
   margin: auto;
 }
@@ -212,10 +241,12 @@ main section {
 
 .nombre {
   font-size: 2.6vw;
+  font-weight: bold;
 }
 
 .descripcion {
   font-size: 2.2vw;
+  font-style: italic;
 }
 
 .precio {
@@ -224,24 +255,42 @@ main section {
 }
 
 .agregar-carrito-btn {
-  font-size: 2vw;
-  width: 60%;
-  margin: 5% 10%;
-  padding: 1%;
-  border: 0.5px solid gray;
-  border-radius: 3px;
-  box-shadow: 0px 0px 2px rgb(100, 100, 100);
-  background-color: #00ee18;
+  font-size: 20px;
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 5px 35px 5px 35px;
+  border-radius: 10px;
+  background-color: #26e947;
   align-self: center;
+  color: white;
+  font-weight: bold;
 }
 
-.items-container {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
+/*
+border: 0.5px solid gray
+box-shadow: 0px 0px 2px rgb(100, 100, 100);
+*/
+
+.agregar-carrito-btn:link{
+  color: white;
+  text-decoration-line: none;
 }
+
+.agregar-carrito-btn:active{
+  color: white;
+  text-decoration-line: none;
+}
+
+.agregar-carrito-btn:visited{
+  color: white;
+  text-decoration-line: none;
+}
+
+.agregar-carrito-btn:hover{
+  color: #003049;
+}
+
 
 /*******************Media Querys****************************/
 
