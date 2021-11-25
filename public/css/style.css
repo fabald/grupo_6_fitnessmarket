@@ -25,13 +25,9 @@
     border-radius: 5px;
 }
 
-
 .hamburguer-menu:hover {
     background-color: #003049;
-
-
 }
-
 
 .side-bar-title {
     padding: 5px 0px;
@@ -61,7 +57,6 @@
     width: 100px;
     height: 100px;
     background-color: aquamarine;
-
 }
 
 .article p {
@@ -122,6 +117,7 @@
     color: white;
 }
 
+
 @media (min-width:576px) {
     .footer {
         justify-content: space-around;
@@ -152,6 +148,7 @@
         width: 50%;
     }
 }
+
 
 @media (min-width:992px) {
     .footer {
@@ -240,7 +237,6 @@ main .carrito{
     width: 200px;
     margin-left: 10px;
 }
-
 
 .descripcion-carrito{
     width: 25%;
@@ -381,22 +377,22 @@ main .carrito{
     height: 100vh;
     background-color: #ebebeb;
 }
+
 .login-header{
     background-color: #003049;
     height: 15vh;
     width: 100%;
 }
+
 .login-flexlogo{
     display: flex;
     justify-content: baseline;
-
 }
+
 .login-logo{
     height: 130%;
     width: 15%;
     padding-bottom: 20px;
-
-
 }
 
 .login-contentbox{
@@ -414,7 +410,6 @@ main .carrito{
     width: 30vw;
     min-width: 280px;
     min-height: 350px;
-
 }
 
 .login-contentbox h2{
@@ -422,7 +417,6 @@ main .carrito{
     font-weight: 1000;
     font-family: sans-serif
 }
-
 
 .login-form{
     padding: 10px;
@@ -433,12 +427,7 @@ main .carrito{
     height: 80%;
     margin:auto;
     align-content: space-around;
-
-
-
 }
-
-
 
 .login-inputbox{
     width: 100%;
@@ -447,9 +436,6 @@ main .carrito{
     margin-bottom: 10px;  /*en desktop poner 20*/
     align-content: center;
     justify-content: center;
-
-
-
 }
 
 .login-inputbox label{
@@ -459,9 +445,6 @@ main .carrito{
     align-self: flex-start;
     font-size: 18px;
     font-family:sans-serif
-
-
-
 }
 
 .login-inputbox input{
@@ -469,10 +452,6 @@ main .carrito{
     font-family: sans-serif;
     font-size: 14px;
     padding: 10px;
-
-
-
-
 }
 
 .login-input{
@@ -480,16 +459,12 @@ main .carrito{
     border-bottom: 3px solid rgb(100, 100, 100);
     background:transparent;
     outline: none;
-
-
 }
-
 
 .login-recordarme{
     text-align: left;
     margin-left: 11%;
     font-family: sans-serif;
-
 }
 
 .login-button{
@@ -508,13 +483,11 @@ main .carrito{
     margin-top: 5%;
     margin-bottom: 5%;
     /*para version desktop aumentar margin top a 10 o 15% */
-
 }
 
 .login-registrate{
     font-family: sans-serif;
     font-size: 12px;
-
 }
 
 
@@ -556,9 +529,5 @@ main .carrito{
     width: 15%;
     padding-bottom: 20px;
 }
-
-
-
-
 
 /*register*/

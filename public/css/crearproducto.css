@@ -15,12 +15,10 @@
     margin-right: 80px;
 }
 
-
 .contenedor-formulario-edit{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .formulario{
@@ -30,25 +28,19 @@
     margin-bottom: 40px;
 }
 
-
 .labelform{
     margin-bottom: 10px;
     padding: 0px;
     font-weight:bold;
     align-self: flex-start;
     font-size: 18px;
-    
-
 }
-
 
 .inputform{
     
     outline: none;
     width: 30vw;
-
 }
-
 
 .boton{
     color:white;

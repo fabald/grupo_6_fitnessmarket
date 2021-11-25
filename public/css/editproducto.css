@@ -15,7 +15,6 @@
     margin-right: 80px;
 }
 
-
 .contenedor-formulario-edit{
     display: flex;
     align-items: center;
@@ -29,7 +28,6 @@
     margin-bottom: 40px;
 }
 
-
 .labelform{
     margin-bottom: 10px;
     padding: 0px;
@@ -38,9 +36,7 @@
     font-size: 18px;
 }
 
-
 .inputform{
-    
     outline: none;
     width: 30vw;
 }

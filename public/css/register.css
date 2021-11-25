@@ -9,6 +9,7 @@
     height: 15vh;
     width: 100%;
 }
+
 .register-flexlogo{
     display: flex;
     justify-content: baseline;
@@ -25,7 +26,16 @@
     background-color: #ebebeb;
 }
 
-
+.register-contentbox h2{
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    color:#003049;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .register-contentbox{
     display: flex;
@@ -34,39 +44,24 @@
     justify-content: center;
     background-color: white;
     margin: 20px auto;  /*ponerle 40px en desktop*/
-    height: 100%;
-    width: 50%;
     box-shadow: 0px 0px 10px rgb(100,100,100);
     border-radius: 3%;
-    height:100vh;
-    width: 30vw;
-    min-width: 280px;
-    min-height: 350px;
-    position: relative;
-    
+    height: 100%;
+    width: 50%;
 }
-
-.register-contentbox h2{
-    text-align: center;
-    font-weight: 1000;
-    font-family: sans-serif;
-    color:#003049
-
-}
-
 
 .register-form{
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     text-align:center;
     flex-grow: 1;
     background-color: white;
     width: 100%;
-    height: 80%;
+    height: 100%;
     margin:auto;
     align-content: space-around;
 }
-
-
 
 .register-inputbox{
     width: 100%;
@@ -78,6 +73,7 @@
     color:#003049; 
     display: flex;
     flex-direction: column;
+    align-self: center;
 }
 
 .register-inputbox label{
@@ -86,36 +82,61 @@
     font-weight:bold;
     align-self: flex-start;
     font-size: 18px;
-    font-family:sans-serif;
-    
+    font-family:sans-serif;    
 }
 
 .register-inputbox input{
     width: 80%;
     font-family: sans-serif;
     font-size: 14px;
-    padding: 10px;
-
-    
-    
- 
+    padding: 10px; 
 }
 
 .register-input{
     border: none;
     border-bottom: 3px solid rgb(100, 100, 100);
     background:transparent;
-    outline: none;
-    
-    
+    outline: none;    
 }
 
+.register-imagen{
+    width: 350px;
+    padding: 5px;  /*en d 7*/
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    color:#003049; 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
 
-.register-recordarme{
-    text-align: left;
-    margin-left: 11%;
+.register-imagen label{
+    margin:0px;
+    padding: 0px;
+    font-weight:bold;
+    align-self: flex-start;
+    font-size: 18px;
+    font-family:sans-serif;
+}
+
+.register-imagen input{
+    width: 80%;
     font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
 
+.register-boton{
+    width: 350px;
+    padding: 5px;  /*en d 7*/
+    margin-top: 20px;
+    align-content: center;
+    justify-content: center;
+    color:#003049; 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .register-button{
@@ -161,6 +182,22 @@
 
 }
 
+.register-login{
+    width: 350px;
+    padding: 5px;  /*en d 7*/
+    margin-right: 35px;
+    align-content: center;
+    justify-content: center;
+    color:#003049; 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.register-login p{
+    align-self: flex-start;
+}
+
 .no-valido{
     border: 1px solid red;
 }
@@ -195,8 +232,6 @@
         justify-content: left;
     }
 
-
-
     .register-inputbox{
         padding: 7px;  /*en d 7*/
         margin-bottom: 20px;  /*en desktop poner 20*/
@@ -214,20 +249,15 @@
         margin:auto;
         margin-right: 29vw;
         margin-left: 13%;
-    
     }
 
     .register-login{
         margin-left: 3vw;
         font-family: sans-serif;
-        
     }
 
 
 }
-
-
-
 
 
 /*register*/
