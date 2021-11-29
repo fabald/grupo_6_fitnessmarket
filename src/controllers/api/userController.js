@@ -6,7 +6,12 @@ const userController = {
     list: (req, res) => {
         db.User.findAll()
         .then(usuarios =>{
-            return res.status(200).json(usuarios)
+            return res.status(200).json({
+                url: "http://localhost:3050/api/users",
+                total: usuarios.length,
+                data: usuarios,
+                status: 200
+            })
         })
     },
     detail: (req, res) => {
