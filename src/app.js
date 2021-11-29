@@ -7,6 +7,8 @@ const session = require("express-session")
 const cookieParser = require('cookie-parser');
 const rutaProductos = require("./routes/products");
 const rutaUsuarios = require("./routes/users");
+const productsRoutes = require('./routes/api/productsRoutes');
+const usersRoutes = require('./routes/api/usersRoutes');
 const app = express();
 const port = 3050;
 
@@ -34,6 +36,8 @@ app.set('views', path.join(__dirname, '/views'));
 /****Routes  ******/
 app.use("/user", rutaUsuarios);
 app.use("/", rutaProductos);
+app.use("/api", productsRoutes);
+app.use("/api", usersRoutes);
 
 app.get("*", (req, res) => {
     res.send("Ruta no encontrada")
