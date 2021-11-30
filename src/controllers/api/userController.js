@@ -13,7 +13,7 @@ const userController = {
             function objetoChanger(objeto){
                 let objetoNuevo = {
                     id: objeto.id,
-                    name: objeto.first_name + objeto.last_name,
+                    name: objeto.first_name + " "+  objeto.last_name,
                     email: objeto.email,
                     ProfilPic: objeto.user_img
                 }
