@@ -15,7 +15,7 @@ const userController = {
                     id: objeto.id,
                     name: objeto.first_name + " "+  objeto.last_name,
                     email: objeto.email,
-                    ProfilPic: objeto.user_img
+                    Detalle: "http://localhost:3050/api/users/" + objeto.id
                 }
                 return objetoNuevo
             
