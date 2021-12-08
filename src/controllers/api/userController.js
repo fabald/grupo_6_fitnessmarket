@@ -9,40 +9,38 @@ const userController = {
 
     list: (req, res) => {
         db.User.findAll()
-        .then(usuarios =>{
-            function objetoChanger(objeto){
-                let objetoNuevo = {
-                    id: objeto.id,
-                    name: objeto.first_name + " "+  objeto.last_name,
-                    email: objeto.email,
-                    Detalle: "http://localhost:3050/api/users/" + objeto.id
+            .then(usuarios => {
+                function objetoChanger(objeto) {
+                    let objetoNuevo = {
+                        id: objeto.id,
+                        name: objeto.first_name + " " + objeto.last_name,
+                        email: objeto.email,
+                        Detalle: "http://localhost:3050/api/users/" + objeto.id
+                    }
+                    return objetoNuevo
                 }
-                return objetoNuevo
-            
-            }
-            
-            function dataForApi(arrayconDataVieja){
-                let arrayNuevo = []
-                for(let i = 0; i < arrayconDataVieja.length; i++ ){
-                    arrayNuevo.push(objetoChanger(arrayconDataVieja[i]))
+
+                function dataForApi(arrayconDataVieja) {
+                    let arrayNuevo = []
+                    for (let i = 0; i < arrayconDataVieja.length; i++) {
+                        arrayNuevo.push(objetoChanger(arrayconDataVieja[i]))
+                    }
+                    return arrayNuevo
                 }
-            
-                return arrayNuevo
-            }
-            
-            return res.status(200).json({
-                url: "http://localhost:3050/api/users",
-                total: usuarios.length,
-                data: dataForApi(usuarios),
-                status: 200
+
+                return res.status(200).json({
+                    url: "http://localhost:3050/api/users",
+                    total: usuarios.length,
+                    data: dataForApi(usuarios),
+                    status: 200
+                })
             })
-        })
     },
     detail: (req, res) => {
         db.User.findByPk(req.params.id)
-        .then(usuarios =>{
-            return res.status(200).json(usuarios)
-        })
+            .then(usuarios => {
+                return res.status(200).json(usuarios)
+            })
     }
 }
 

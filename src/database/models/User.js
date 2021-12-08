@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
             //Si no tengo timestamps
         });
 
-    User.associate = function(models) {
+    User.associate = function (models) {
         User.hasMany(models.Product, {
             as: 'products',
             foreignKey: 'user_id'
