@@ -34,9 +34,18 @@ const productController = {
             .catch(e => console.log(e))
     },
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id, { include: [{ association: "categories" }, {association: "users"}] })
+        db.Product.findByPk(req.params.id, { include: [{ association: "categories" }, { association: "users" }] })
             .then(productos => {
-                return res.status(200).json(productos)
+                return res.status(200).json({
+                    id: productos.id,
+                    name: productos.product_name,
+                    description: productos.description,
+                    price: productos.price,
+                    brand: productos.brand,
+                    image: "http://localhost:3050/api/img/productImg/" + productos.product_img,
+                    category: productos.categories.name,
+                    user: productos.users.first_name+' '+productos.users.last_name
+                })
             })
     }
 }

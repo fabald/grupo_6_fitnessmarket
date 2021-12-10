@@ -9,6 +9,7 @@ const rutaProductos = require("./routes/products");
 const rutaUsuarios = require("./routes/users");
 const productsRoutes = require('./routes/api/productsRoutes');
 const usersRoutes = require('./routes/api/usersRoutes');
+const imgRoutes = require('./routes/api/imgRoutes');
 const app = express();
 const port = 3050;
 
@@ -22,7 +23,7 @@ app.use(express.json())
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
-app.use(session({secret: "Mensaje secreto", resave: false, saveUninitialized: false}));
+app.use(session({ secret: "Mensaje secreto", resave: false, saveUninitialized: false }));
 app.use(userLoggedMiddleware);
 
 /********Template *********/
@@ -38,6 +39,7 @@ app.use("/user", rutaUsuarios);
 app.use("/", rutaProductos);
 app.use("/api", productsRoutes);
 app.use("/api", usersRoutes);
+app.use("/api/img", imgRoutes);
 
 app.get("*", (req, res) => {
     res.send("Ruta no encontrada")
@@ -46,7 +48,7 @@ app.get("*", (req, res) => {
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto: http://localhost:" + port + "/home")
-    
+
 });
 
 
