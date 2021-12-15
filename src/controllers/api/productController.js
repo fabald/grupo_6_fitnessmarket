@@ -53,15 +53,28 @@ const productController = {
                     return contadorGeneral
                 }
 
+                function lastCreated(data) {
+                    let obj = data[0]
+                    data.forEach(element => {
+                        if (element.id > obj.id) {
+                            obj = element
+                        }
+                    })
+
+                    return obj
+                }
+
                 return res.status(200).json({
                     url: "http://localhost:3050/api/products",
                     total: productos.length,
                     categorias: countCategorias(productos),
+                    ultimo_producto: lastCreated(productos),
                     data: dataForApi(productos),
                     status: 200,
                 })
             })
             .catch(e => console.log(e))
+
     },
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, { include: [{ association: "categories" }, { association: "users" }] })
