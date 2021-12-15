@@ -24,10 +24,39 @@ const productController = {
                     }
                     return arrayNuevo
                 }
+                // funcionn para averiguar las categorias de los productos.
+                function countCategorias(objeto){
+                    let musculacion = 0
+                    let suplementos = 0
+                    let indumentaria = 0
+                    let equipamiento = 0
+
+                    for(let i= 0; i < objeto.length ; i++){
+                        if(objeto[i].category_id == 1){
+                            indumentaria++
+                        }else if(objeto[i].category_id==2){
+                            suplementos++
+                        }else if(objeto[i].category_id==3){
+                            equipamiento++
+                        }else if(objeto[i].category_id==4){
+                            musculacion++
+                        }
+                    }
+
+                    contadorGeneral = {
+                        indumentaria: indumentaria,
+                        suplementos: suplementos,
+                        equipamiento: equipamiento,
+                        musculacion: musculacion
+                    }
+
+                    return contadorGeneral
+                }
 
                 return res.status(200).json({
                     url: "http://localhost:3050/api/products",
                     total: productos.length,
+                    categorias: countCategorias(productos),
                     data: dataForApi(productos),
                     status: 200,
                 })
