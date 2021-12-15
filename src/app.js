@@ -12,6 +12,7 @@ const usersRoutes = require('./routes/api/usersRoutes');
 const imgRoutes = require('./routes/api/imgRoutes');
 const app = express();
 const port = 3050;
+const cors = require('cors')
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
@@ -25,7 +26,7 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(session({ secret: "Mensaje secreto", resave: false, saveUninitialized: false }));
 app.use(userLoggedMiddleware);
-
+app.use(cors())
 /********Template *********/
 
 app.set("view engine", "ejs");

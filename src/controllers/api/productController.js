@@ -10,9 +10,10 @@ const productController = {
                     let objetoNuevo = {
                         id: objeto.id,
                         name: objeto.product_name,
-                        categoría: objeto.categories.name,
+                        categoria: objeto.categories.name,
                         descripcion: objeto.description,
-                        detalle: "http://localhost:3050/api/products/" + objeto.id
+                        detalle: "http://localhost:3050/api/products/" + objeto.id,
+                        category_id: objeto.category_id
                     }
                     return objetoNuevo
                 }
@@ -28,7 +29,7 @@ const productController = {
                     url: "http://localhost:3050/api/products",
                     total: productos.length,
                     data: dataForApi(productos),
-                    status: 200
+                    status: 200,
                 })
             })
             .catch(e => console.log(e))
